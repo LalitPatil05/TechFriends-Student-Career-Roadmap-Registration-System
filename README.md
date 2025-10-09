@@ -41,7 +41,7 @@ Students can register, select a technology domain, and explore detailed roadmaps
 ---
 
 ## 🌐 Live Demo
-👉 [View on GitHub Pages](https://LalitPatil05.github.io/TechFriends-Student-Career-Roadmap-Registration-System/techfriends-roadmap/index.html)
+👉 [View on GitHub Pages](https://LalitPatil05.github.io/TechFriends-Student-Career-Roadmap-Registration-System/techfriends-roadmap/register.html)
 
 ---
 
