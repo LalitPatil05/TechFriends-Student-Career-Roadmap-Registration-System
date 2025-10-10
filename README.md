@@ -26,15 +26,15 @@ Students can register, select a technology domain, and explore detailed roadmaps
 - (Optional) Node.js + MongoDB for backend
 
 ---
-'''html
+'''bash
 ## 📁 Project Structure
 /techfriends-roadmap
 │
 ├── index.html
 ├── about.html
 ├── register.html
-├── roadmap.html
 ├── contact.html
+├── privacy.html
 └── README.md
 '''
 
