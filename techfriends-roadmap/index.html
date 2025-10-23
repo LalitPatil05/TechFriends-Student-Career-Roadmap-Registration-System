@@ -7,72 +7,1082 @@
     <title>🎓 TechFriends — Student Career Roadmap & Registration System</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary-color: #4361ee;
+            --secondary-color: #3f37c9;
+            --accent-color: #4895ef;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+        }
 
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 100px 0;
+            margin-bottom: 50px;
+        }
+
+        .hero-section h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .feature-card {
+            transition: transform 0.3s ease;
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .stats-section {
+            background-color: var(--light-color);
+            padding: 70px 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .testimonial-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+
+        .testimonial-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 20px;
+        }
+
+        .newsletter-section {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 70px 0;
+        }
+
+        .progress-section {
+            padding: 70px 0;
+        }
+
+        .progress-container {
+            margin-bottom: 30px;
+        }
+
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+
+        .progress {
+            height: 10px;
+            border-radius: 5px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .course-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Bootstrap" width="30"
-                    height="24">
+            <!-- Brand with improved styling -->
+            <a class="navbar-brand d-flex align-items-center fw-bold" href="index.html">
+                <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo.svg" alt="TechFriends"
+                    width="35" height="35" class="me-2">
+                <span class="gradient-text">TechFriends</span>
             </a>
-            <a class="navbar-brand" href="index.html">TechFriends</a>
+
+            <!-- Mobile toggle button -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
+            <!-- Navbar content -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- Navigation links - streamlined -->
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact </a>
+                        <a class="nav-link active" aria-current="page" href="index.html">
+                            <i class="bi bi-house-fill me-1"></i>Home
+                        </a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
-                            Technology
+                            <i class="bi bi-laptop me-1"></i>Learning Paths
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Web Developement</a></li>
-                            <li><a class="dropdown-item" href="#">App Developement</a></li>
-                            <li><a class="dropdown-item" href="#">Desktop Application</a></li>
+                            <li>
+                                <h6 class="dropdown-header">Development Paths</h6>
+                            </li>
+                            <li><a class="dropdown-item" href="https://roadmap.sh/frontend">
+                                    <i class="bi bi-code-slash me-2"></i>Web Development
+                                </a></li>
+                            <li><a class="dropdown-item" href="https://roadmap.sh/android">
+                                    <i class="bi bi-phone me-2"></i>App Development
+                                </a></li>
+                            <li><a class="dropdown-item" href="https://roadmap.sh/software-architect">
+                                    <i class="bi bi-pc-display me-2"></i>Desktop Development
+                                </a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">Frontend Development</a></li>
-                            <li><a class="dropdown-item" href="#">Backend Development</a></li>
-                            <li><a class="dropdown-item" href="#">Full Stack Development</a></li>
-                            <li><a class="dropdown-item" href="#">Java Full Stack</a></li>
+                            <li>
+                                <h6 class="dropdown-header">Specializations</h6>
+                            </li>
+                            <li><a class="dropdown-item" href="https://roadmap.sh/frontend">
+                                    <i class="bi bi-palette me-2"></i>Frontend Development
+                                </a></li>
+                            <li><a class="dropdown-item" href="https://roadmap.sh/backend">
+                                    <i class="bi bi-server me-2"></i>Backend Development
+                                </a></li>
+                            <li><a class="dropdown-item" href="https://roadmap.sh/full-stack">
+                                    <i class="bi bi-stack me-2"></i>Full Stack Development
+                                </a></li>
+                            <li><a class="dropdown-item" href="https://roadmap.sh/java">
+                                    <i class="bi bi-cup-hot me-2"></i>Java Full Stack
+                                </a></li>
                         </ul>
                     </li>
-
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">
+                            <i class="bi bi-people-fill me-1"></i>About Us
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">
+                            <i class="bi bi-envelope-fill me-1"></i>Contact
+                        </a>
+                    </li>
                 </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+
+                <!-- Search bar with improved functionality -->
+                <form class="d-flex me-3 search-form" role="search">
+                    <div class="input-group">
+                        <input class="form-control search-input" type="search" placeholder="Search courses, topics..."
+                            aria-label="Search" />
+                        <button class="btn btn-outline-success" type="submit">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </div>
                 </form>
-                <div class="mx-2">
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#signinModal">Login</button>
-                    <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#signupModal">SignUp</button>
-                    <a href="index0.html" class="btn btn-danger">LogOut</a>
+
+                <!-- User actions with improved styling -->
+                <div class="d-flex align-items-center">
+                    <!-- User status indicator -->
+                    <div class="user-status me-3 d-none d-lg-block">
+                        <span class="badge bg-warning text-dark">
+                            <i class="bi bi-circle-fill me-1"></i>New courses available
+                        </span>
+                    </div>
+
+                    <!-- Auth buttons -->
+                    <div class="btn-group">
+                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#signinModal">
+                            <i class="bi bi-box-arrow-in-right me-1"></i>Login
+                        </button>
+                        <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#signupModal">
+                            <i class="bi bi-person-plus me-1"></i>SignUp
+                        </button>
+                        <a href="register.html" class="btn btn-outline-light me-2">Register</a>
+                        </button>
+                    </div>
+
+                    <!-- User profile dropdown (visible when logged in) -->
+                    <div class="dropdown ms-2">
+                        <a class="btn btn-outline-light btn-sm dropdown-toggle d-none" href="#" role="button"
+                            id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-circle me-1"></i>User
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                            <li><a class="dropdown-item" href="dashboard.html">
+                                    <i class="bi bi-speedometer2 me-2"></i>Dashboard
+                                </a></li>
+                            <li><a class="dropdown-item" href="profile.html">
+                                    <i class="bi bi-person me-2"></i>My Profile
+                                </a></li>
+                            <li><a class="dropdown-item" href="progress.html">
+                                    <i class="bi bi-graph-up me-2"></i>My Progress
+                                </a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item text-danger" href="index0.html">
+                                    <i class="bi bi-box-arrow-right me-2"></i>Logout
+                                </a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </nav>
-    <br>
+
+    <style>
+        /* Custom navbar styles */
+        .navbar {
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            padding: 0.5rem 1rem;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .navbar-brand:hover {
+            transform: scale(1.05);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            padding: 0.5rem 1rem !important;
+            border-radius: 0.375rem;
+            margin: 0 0.125rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-1px);
+        }
+
+        .dropdown-menu {
+            border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+        }
+
+        .dropdown-item {
+            border-radius: 0.375rem;
+            padding: 0.5rem 1rem;
+            transition: all 0.2s ease;
+        }
+
+        .dropdown-item:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .search-form {
+            min-width: 250px;
+        }
+
+        .search-input {
+            border-radius: 0.375rem 0 0 0.375rem;
+            border-right: none;
+        }
+
+        .search-input:focus {
+            box-shadow: none;
+            border-color: #198754;
+        }
+
+        .btn-group .btn {
+            border-radius: 0.375rem;
+            margin: 0 2px;
+        }
+
+        .user-status .badge {
+            font-size: 0.75rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.7;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 991.98px) {
+            .search-form {
+                margin: 1rem 0;
+                min-width: 100%;
+            }
+
+            .btn-group {
+                width: 100%;
+                margin-bottom: 0.5rem;
+            }
+
+            .btn-group .btn {
+                flex: 1;
+            }
+
+            .user-status {
+                display: none !important;
+            }
+        }
+    </style>
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <script>
+        // Simple script to handle user state
+        document.addEventListener('DOMContentLoaded', function () {
+            // Check if user is logged in (this would typically come from your auth system)
+            const isLoggedIn = false; // Change to true to see logged in state
+
+            if (isLoggedIn) {
+                // Show user dropdown and hide login buttons
+                document.querySelector('.btn-group').classList.add('d-none');
+                document.querySelector('#userDropdown').classList.remove('d-none');
+            }
+
+            // Add search functionality
+            const searchForm = document.querySelector('.search-form');
+            searchForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const searchTerm = this.querySelector('input').value.trim();
+                if (searchTerm) {
+                    alert(`Searching for: ${searchTerm}`);
+                    // Implement actual search functionality here
+                    this.querySelector('input').value = '';
+                }
+            });
+
+            // Add active state management
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1>Launch Your Tech Career with Confidence</h1>
+                    <p>Join thousands of students who have transformed their careers with our structured learning paths,
+                        expert mentorship, and real-world projects.</p>
+                    <div class="d-flex gap-3">
+                        <button class="btn btn-light btn-lg" data-bs-toggle="modal" data-bs-target="#signupModal">Get
+                            Started</button>
+                        <a href="https://roadmap.sh/" class="btn btn-outline-light btn-lg">Explore Roadmaps</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://imgs.search.brave.com/7BsKrTH6rSqgipEYz9I9Q_GP9Ssr_v-fL4LlNuEZTM4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS12ZWN0/b3Ivd2ViLWRldmVs/b3BtZW50LWZsYXQt/bGFuZGluZy1wYWdl/LWNyZWF0aXZlLXRl/YW0tZGVzaWduZXJz/LWRldmVsb3BlcnMt/d29yay10b2dldGhl/ci1pbGx1c3RyYXRp/b24tZnVsbC1zdGFj/ay1kZXZlbG9wbWVu/dC1zb2Z0d2FyZS1l/bmdpbmVlcmluZy13/ZWItcGFnZS1jb21w/b3NpdGlvbi13aXRo/LXBlb3BsZS1jaGFy/YWN0ZXJzXzkyMDkt/MzU0NS5qcGc_c2Vt/dD1haXNfaHlicmlk/Jnc9NzQwJnE9ODA"
+                        class="img-fluid rounded shadow" alt="Tech Team">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3 col-6 stat-item">
+                    <div class="stat-number">10,000+</div>
+                    <p>Students Enrolled</p>
+                </div>
+                <div class="col-md-3 col-6 stat-item">
+                    <div class="stat-number">500+</div>
+                    <p>Expert Mentors</p>
+                </div>
+                <div class="col-md-3 col-6 stat-item">
+                    <div class="stat-number">95%</div>
+                    <p>Job Placement Rate</p>
+                </div>
+                <div class="col-md-3 col-6 stat-item">
+                    <div class="stat-number">50+</div>
+                    <p>Learning Paths</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Paths Section -->
+    <section id="roadmaps" class="container py-5">
+        <h2 class="text-center mb-4">Choose Your Career Path</h2>
+        <p class="text-center mb-5">Select from our curated learning paths designed by industry experts</p>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm feature-card">
+                    <div class="position-relative">
+                        <img src="https://imgs.search.brave.com/7BsKrTH6rSqgipEYz9I9Q_GP9Ssr_v-fL4LlNuEZTM4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS12ZWN0/b3Ivd2ViLWRldmVs/b3BtZW50LWZsYXQt/bGFuZGluZy1wYWdl/LWNyZWF0aXZlLXRl/YW0tZGVzaWduZXJz/LWRldmVsb3BlcnMt/d29yay10b2dldGhl/ci1pbGx1c3RyYXRp/b24tZnVsbC1zdGFj/ay1kZXZlbG9wbWVu/dC1zb2Z0d2FyZS1l/bmdpbmVlcmluZy13/ZWItcGFnZS1jb21w/b3NpdGlvbi13aXRo/LXBlb3BsZS1jaGFy/YWN0ZXJzXzkyMDkt/MzU0NS5qcGc_c2Vt/dD1haXNfaHlicmlk/Jnc9NzQwJnE9ODA"
+                            class="card-img-top" alt="Web Development">
+                        <span class="course-badge">Most Popular</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Web Development</h5>
+                        <p class="card-text">Learn HTML, CSS, JS, React, and backend development to become a
+                            professional web developer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <span class="badge bg-primary">6 Months</span>
+                                <span class="badge bg-secondary">Beginner</span>
+                            </div>
+                            <a href="https://neetcode.io/courses/full-stack-dev/0" class="btn btn-outline-primary">View
+                                Roadmap</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm feature-card">
+                    <img src="https://imgs.search.brave.com/j9RbY_qUeRRtTGcR_ubsw2YhKYEsXL91F4qF-cQI6ig/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG5p/Lmljb25zY291dC5j/b20vaWxsdXN0cmF0/aW9uL3ByZW1pdW0v/dGh1bWIvYXBwLWRl/dmVsb3BtZW50LWls/bHVzdHJhdGlvbi1z/dmctZG93bmxvYWQt/cG5nLTQ0OTg2OTUu/cG5n"
+                        class="card-img-top" alt="App Development">
+                    <div class="card-body">
+                        <h5 class="card-title">App Development</h5>
+                        <p class="card-text">Master Android and iOS app development with Flutter, Kotlin, or React
+                            Native.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <span class="badge bg-primary">8 Months</span>
+                                <span class="badge bg-secondary">Intermediate</span>
+                            </div>
+                            <a href="https://roadmap.sh/android" class="btn btn-outline-success">View Roadmap</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm feature-card">
+                    <img src="https://imgs.search.brave.com/PS7UDtLh6Co9TP2olcVM_aWTySFybXibKq99Xaos-kk/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4u/a29keXRlY2hub2xh/Yi5jb20vd3AtY29u/dGVudC91cGxvYWRz/LzIwMjUvMDMvYWkt/YW5kLW1sLWRldmVs/b3BtZW50LWNvbXBh/bnktaW4taW5kaWEu/d2VicA"
+                        class="card-img-top" alt="AI Development">
+                    <div class="card-body">
+                        <h5 class="card-title">AI & Machine Learning</h5>
+                        <p class="card-text">Explore AI tools, ML models, and data science concepts to enter the AI
+                            revolution.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <span class="badge bg-primary">10 Months</span>
+                                <span class="badge bg-secondary">Advanced</span>
+                            </div>
+                            <a href="https://roadmap.sh/ai-data-scientist" class="btn btn-outline-danger">View
+                                Roadmap</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <a href="https://roadmap.sh/" class="btn btn-primary btn-lg">View All Learning Paths</a>
+        </div>
+    </section>
+
+    <!-- Progress Tracking Section -->
+    <section class="progress-section bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Track Your Learning Progress</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="progress-container">
+                        <div class="progress-label">
+                            <span>HTML & CSS</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85"
+                                aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+
+                    <div class="progress-container">
+                        <div class="progress-label">
+                            <span>JavaScript</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="70"
+                                aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+
+                    <div class="progress-container">
+                        <div class="progress-label">
+                            <span>React</span>
+                            <span>45%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 45%" aria-valuenow="45"
+                                aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+
+                    <div class="progress-container">
+                        <div class="progress-label">
+                            <span>Node.js</span>
+                            <span>30%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 30%" aria-valuenow="30"
+                                aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-4">
+                        <button class="btn btn-primary">Continue Learning</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="container py-5">
+        <h2 class="text-center mb-4">Why Choose TechFriends?</h2>
+        <div class="row">
+            <div class="col-md-4 text-center mb-4">
+                <div class="feature-icon">
+                    <i class="bi bi-laptop"></i>
+                </div>
+                <h5 class="mt-3">Learn by Doing</h5>
+                <p>Build real-world projects and gain hands-on experience with mentors.</p>
+            </div>
+            <div class="col-md-4 text-center mb-4">
+                <div class="feature-icon">
+                    <i class="bi bi-people"></i>
+                </div>
+                <h5 class="mt-3">Community Support</h5>
+                <p>Join a network of developers, students, and professionals helping each other.</p>
+            </div>
+            <div class="col-md-4 text-center mb-4">
+                <div class="feature-icon">
+                    <i class="bi bi-award"></i>
+                </div>
+                <h5 class="mt-3">Career Guidance</h5>
+                <p>Get expert mentorship and roadmap to land your dream tech job.</p>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-4 text-center mb-4">
+                <div class="feature-icon">
+                    <i class="bi bi-clock"></i>
+                </div>
+                <h5 class="mt-3">Self-Paced Learning</h5>
+                <p>Learn at your own pace with flexible schedules and lifetime access.</p>
+            </div>
+            <div class="col-md-4 text-center mb-4">
+                <div class="feature-icon">
+                    <i class="bi bi-briefcase"></i>
+                </div>
+                <h5 class="mt-3">Job Placement Assistance</h5>
+                <p>Get help with resume building, interview prep, and job applications.</p>
+            </div>
+            <div class="col-md-4 text-center mb-4">
+                <div class="feature-icon">
+                    <i class="bi bi-file-earmark-code"></i>
+                </div>
+                <h5 class="mt-3">Real Projects Portfolio</h5>
+                <p>Build a portfolio of projects that showcase your skills to employers.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">What Our Students Say</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://imgs.search.brave.com/8c0XkrGNb7S4ImGRWg1VSkJ9NR2brUD6DwOTfbFmGxE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzE1LzAxLzIyLzg2/LzM2MF9GXzE1MDEy/Mjg2MzBfOXh1elU1/RTk2WmN4dTlkMUlG/Rm1ITndQd2lkazZv/dlEuanBn"
+                                class="testimonial-img" alt="Student">
+                            <div>
+                                <h5 class="mb-0">Lalit Patil</h5>
+                                <p class="text-muted mb-0">Web Developer at TechCorp</p>
+                            </div>
+                        </div>
+                        <p>"TechFriends completely transformed my career. The structured roadmap and mentor support
+                            helped me land my dream job in just 6 months!"</p>
+                        <div class="text-warning">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://imgs.search.brave.com/8c0XkrGNb7S4ImGRWg1VSkJ9NR2brUD6DwOTfbFmGxE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzE1LzAxLzIyLzg2/LzM2MF9GXzE1MDEy/Mjg2MzBfOXh1elU1/RTk2WmN4dTlkMUlG/Rm1ITndQd2lkazZv/dlEuanBn"
+                                class="testimonial-img" alt="Student">
+                            <div>
+                                <h5 class="mb-0">Sumit Patil</h5>
+                                <p class="text-muted mb-0">Mobile App Developer</p>
+                            </div>
+                        </div>
+                        <p>"The project-based learning approach was exactly what I needed. I built 5 real apps during
+                            the course that became the highlight of my portfolio."</p>
+                        <div class="text-warning">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://imgs.search.brave.com/8c0XkrGNb7S4ImGRWg1VSkJ9NR2brUD6DwOTfbFmGxE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzE1LzAxLzIyLzg2/LzM2MF9GXzE1MDEy/Mjg2MzBfOXh1elU1/RTk2WmN4dTlkMUlG/Rm1ITndQd2lkazZv/dlEuanBn"
+                                class="testimonial-img" alt="Student">
+                            <div>
+                                <h5 class="mb-0">Yogesh Badgujar</h5>
+                                <p class="text-muted mb-0">Data Scientist</p>
+                            </div>
+                        </div>
+                        <p>"The AI & ML path was comprehensive and up-to-date with industry trends. The mentorship
+                            program helped me navigate complex concepts with ease."</p>
+                        <div class="text-warning">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-half"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://imgs.search.brave.com/8c0XkrGNb7S4ImGRWg1VSkJ9NR2brUD6DwOTfbFmGxE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzE1LzAxLzIyLzg2/LzM2MF9GXzE1MDEy/Mjg2MzBfOXh1elU1/RTk2WmN4dTlkMUlG/Rm1ITndQd2lkazZv/dlEuanBn"
+                                class="testimonial-img" alt="Student">
+                            <div>
+                                <h5 class="mb-0">Yash Patil</h5>
+                                <p class="text-muted mb-0">Full Stack Developer</p>
+                            </div>
+                        </div>
+                        <p>"I tried multiple online courses before, but TechFriends' community support made all the
+                            difference. The peer learning and code reviews were invaluable."</p>
+                        <div class="text-warning">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center">
+                    <div class="newsletter-icon mb-3">
+                        <i class="bi bi-envelope-check"></i>
+                    </div>
+                    <h2 class="mb-4">Stay Updated with TechFriends</h2>
+                    <p class="mb-4">Get the latest course updates, tech news, and career tips directly in your inbox.
+                    </p>
+
+                    <form class="row g-3 justify-content-center" id="newsletterForm">
+                        <div class="col-md-6">
+                            <div class="input-group input-group-lg">
+                                <span class="input-group-text">
+                                    <i class="bi bi-envelope"></i>
+                                </span>
+                                <input type="email" class="form-control" id="newsletterEmail"
+                                    placeholder="Your email address" required>
+                            </div>
+                            <div class="form-text text-light mt-2">
+                                <i class="bi bi-shield-check me-1"></i>We respect your privacy. Unsubscribe at any time.
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <button type="submit" class="btn btn-light btn-lg w-100" id="subscribeBtn">
+                                <i class="bi bi-bell-fill me-2"></i>Subscribe
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- Success Message -->
+                    <div class="alert alert-success mt-4 d-none" id="successMessage" role="alert">
+                        <i class="bi bi-check-circle-fill me-2"></i>
+                        <strong>Success!</strong> You've been subscribed to our newsletter.
+                    </div>
+
+                    <!-- Subscription Status -->
+                    <div class="subscription-status mt-3">
+                        <small class="text-light">
+                            <i class="bi bi-people me-1"></i>
+                            <span id="subscriberCount">15,842</span> developers already subscribed
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .newsletter-section {
+            background: linear-gradient(135deg, #4361ee, #3f37c9);
+            color: white;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .newsletter-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="%23ffffff" opacity="0.1"><polygon points="1000,100 1000,0 0,100"/></svg>');
+            background-size: cover;
+        }
+
+        .newsletter-icon {
+            font-size: 3rem;
+            color: rgba(255, 255, 255, 0.9);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .input-group-text {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-right: none;
+            color: white;
+        }
+
+        .form-control {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-left: none;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.5);
+            box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
+            color: white;
+        }
+
+        .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .btn-light {
+            background: white;
+            border: none;
+            color: #4361ee;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-light:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-light.btn-unsubscribe {
+            background: #ff6b6b;
+            color: white;
+        }
+
+        .btn-light.btn-unsubscribe:hover {
+            background: #ff5252;
+        }
+
+        .subscription-status {
+            opacity: 0.8;
+        }
+
+        .alert-success {
+            border: none;
+            border-radius: 10px;
+            background: rgba(40, 167, 69, 0.9);
+            color: white;
+        }
+
+        /* Pulse animation for new subscribers */
+        @keyframes pulse-grow {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .pulse-animation {
+            animation: pulse-grow 0.5s ease-in-out;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .newsletter-section {
+                padding: 60px 0;
+            }
+
+            .newsletter-icon {
+                font-size: 2.5rem;
+            }
+
+            .col-md-6,
+            .col-md-2 {
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+
+            .btn-lg {
+                padding: 0.75rem 1.5rem;
+            }
+        }
+    </style>
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const newsletterForm = document.getElementById('newsletterForm');
+            const subscribeBtn = document.getElementById('subscribeBtn');
+            const newsletterEmail = document.getElementById('newsletterEmail');
+            const successMessage = document.getElementById('successMessage');
+            const subscriberCount = document.getElementById('subscriberCount');
+
+            let isSubscribed = false;
+            let currentSubscribers = 15842;
+
+            // Check if user was previously subscribed (in a real app, this would check localStorage or make an API call)
+            const checkSubscriptionStatus = () => {
+                // Simulate checking subscription status
+                const savedEmail = localStorage.getItem('techfriends_subscribed_email');
+                if (savedEmail) {
+                    isSubscribed = true;
+                    newsletterEmail.value = savedEmail;
+                    updateButtonState();
+                }
+            };
+
+            // Update button text and state
+            const updateButtonState = () => {
+                if (isSubscribed) {
+                    subscribeBtn.innerHTML = '<i class="bi bi-bell-slash me-2"></i>Unsubscribe';
+                    subscribeBtn.classList.add('btn-unsubscribe');
+                    newsletterEmail.disabled = true;
+                } else {
+                    subscribeBtn.innerHTML = '<i class="bi bi-bell-fill me-2"></i>Subscribe';
+                    subscribeBtn.classList.remove('btn-unsubscribe');
+                    newsletterEmail.disabled = false;
+                }
+            };
+
+            // Handle form submission
+            newsletterForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const email = newsletterEmail.value.trim();
+
+                if (!email) {
+                    newsletterEmail.focus();
+                    return;
+                }
+
+                if (!isValidEmail(email)) {
+                    alert('Please enter a valid email address.');
+                    return;
+                }
+
+                // Simulate API call
+                simulateSubscription(email);
+            });
+
+            // Email validation
+            const isValidEmail = (email) => {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+            };
+
+            // Simulate subscription process
+            const simulateSubscription = (email) => {
+                // Show loading state
+                const originalText = subscribeBtn.innerHTML;
+                subscribeBtn.innerHTML = '<i class="bi bi-arrow-repeat spinner me-2"></i>Processing...';
+                subscribeBtn.disabled = true;
+
+                setTimeout(() => {
+                    if (!isSubscribed) {
+                        // Subscribe
+                        isSubscribed = true;
+                        localStorage.setItem('techfriends_subscribed_email', email);
+                        currentSubscribers++;
+                        subscriberCount.textContent = currentSubscribers.toLocaleString();
+                        subscriberCount.classList.add('pulse-animation');
+
+                        // Show success message
+                        successMessage.classList.remove('d-none');
+
+                        setTimeout(() => {
+                            successMessage.classList.add('d-none');
+                        }, 5000);
+                    } else {
+                        // Unsubscribe
+                        isSubscribed = false;
+                        localStorage.removeItem('techfriends_subscribed_email');
+                        currentSubscribers--;
+                        subscriberCount.textContent = currentSubscribers.toLocaleString();
+                        newsletterEmail.value = '';
+
+                        // Show unsubscribe message
+                        const unsubscribeMessage = document.createElement('div');
+                        unsubscribeMessage.className = 'alert alert-info mt-4';
+                        unsubscribeMessage.innerHTML = '<i class="bi bi-info-circle-fill me-2"></i><strong>Sorry to see you go!</strong> You have been unsubscribed.';
+                        successMessage.parentNode.insertBefore(unsubscribeMessage, successMessage.nextSibling);
+
+                        setTimeout(() => {
+                            unsubscribeMessage.remove();
+                        }, 5000);
+                    }
+
+                    updateButtonState();
+                    subscribeBtn.disabled = false;
+                    subscribeBtn.innerHTML = originalText;
+
+                    // Remove animation class after animation completes
+                    setTimeout(() => {
+                        subscriberCount.classList.remove('pulse-animation');
+                    }, 500);
+
+                }, 1500);
+            };
+
+            // Initialize
+            checkSubscriptionStatus();
+
+            // Add spinner animation
+            const style = document.createElement('style');
+            style.textContent = `
+            .spinner {
+                animation: spin 1s linear infinite;
+            }
+            @keyframes spin {
+                from { transform: rotate(0deg); }
+                to { transform: rotate(360deg); }
+            }
+        `;
+            document.head.appendChild(style);
+        });
+    </script>
 
     <!-- Login Modal -->
-    <!-- Button trigger modal -->
-
-    <!-- Modal -->
     <div class="modal fade" id="signinModal" tabindex="-1" aria-labelledby="signinModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -94,9 +1104,11 @@
                         </div>
                         <div class="mb-3 form-check">
                             <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                            <label class="form-check-label" for="exampleCheck1">Remember me</label>
                         </div>
-
+                        <div class="mb-3 text-center">
+                            <a href="#">Forgot password?</a>
+                        </div>
                     </form>
                 </div>
                 <div class="modal-footer">
@@ -106,13 +1118,8 @@
             </div>
         </div>
     </div>
-    <br>
 
     <!-- Signup Modal -->
-
-    <!-- Button trigger modal -->
-
-    <!-- Modal -->
     <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -123,7 +1130,7 @@
                 <div class="modal-body">
                     <form>
                         <div class="mb-3">
-                            <label class="form-label">Name</label>
+                            <label class="form-label">Full Name</label>
                             <input type="text" class="form-control" placeholder="Your name">
                         </div>
                         <div class="mb-3">
@@ -136,11 +1143,26 @@
                             <label for="exampleInputPassword1" class="form-label">Password</label>
                             <input type="password" class="form-control" id="exampleInputPassword1">
                         </div>
-                        <div class="mb-3 form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        <div class="mb-3">
+                            <label for="confirmPassword" class="form-label">Confirm Password</label>
+                            <input type="password" class="form-control" id="confirmPassword">
                         </div>
-
+                        <div class="mb-3">
+                            <label class="form-label">Interested Path</label>
+                            <select class="form-select">
+                                <option selected>Select a learning path</option>
+                                <option value="1">Web Development</option>
+                                <option value="2">App Development</option>
+                                <option value="3">AI & Machine Learning</option>
+                                <option value="4">Data Science</option>
+                                <option value="5">Cyber Security</option>
+                            </select>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="termsCheck">
+                            <label class="form-check-label" for="termsCheck">I agree to the <a href="#">Terms and
+                                    Conditions</a></label>
+                        </div>
                     </form>
                 </div>
                 <div class="modal-footer">
@@ -151,158 +1173,43 @@
         </div>
     </div>
 
-    <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-                aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-                aria-label="Slide 3"></button>
+    <footer class="bg-dark text-light text-center py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5>TechFriends</h5>
+                    <p>Empowering students to build successful tech careers through structured learning paths and
+                        community support.</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light">Home</a></li>
+                        <li><a href="about.html" class="text-light">About Us</a></li>
+                        <li><a href="contact.html" class="text-light">Contact</a></li>
+                        <li><a href="#roadmaps" class="text-light">Learning Paths</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Connect With Us</h5>
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="#" class="text-light"><i class="bi bi-facebook fs-4"></i></a>
+                        <a href="#" class="text-light"><i class="bi bi-twitter fs-4"></i></a>
+                        <a href="https://www.linkedin.com/in/lalitpatil05/" class="text-light"><i
+                                class="bi bi-linkedin fs-4"></i></a>
+                        <a href="https://www.instagram.com/lalit_patil1425/" class="text-light"><i
+                                class="bi bi-instagram fs-4"></i></a>
+                        <a href="https://studio.youtube.com/channel/UCJxgcHov2B2FUgXg1Lq32Zw" class="text-light"><i
+                                class="bi bi-youtube fs-4"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <p>&copy; 2025 TechFriends | Designed by Lalit & Team | All Rights Reserved</p>
+            <a href="privacy.html" class="text-light mx-2">Privacy Policy</a> |
+            <a href="termservices.html" class="text-light mx-2">Terms of Service</a>
         </div>
-
-        <div class="carousel-inner">
-
-            <!-- Slide 1 -->
-            <div class="carousel-item active">
-                <div class="d-flex justify-content-center">
-                    <div class="card h-100 shadow-lg border-0" style="width: 72rem;">
-                        <img src="https://images.unsplash.com/photo-1505685296765-3a2736de412f?q=80&w=1000"
-                            class="card-img-top" alt="Web Development">
-                        <div class="card-body text-center">
-                            <h5 class="card-title fw-bold text-primary">Web Development</h5>
-                            <p class="card-text text-muted">Build responsive, dynamic websites using HTML, CSS, JS,
-                                React, and Node.js.</p>
-                            <a href="roadmap-web.html" class="btn btn-outline-primary">Explore Roadmap</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Slide 2 -->
-            <div class="carousel-item">
-                <div class="d-flex justify-content-center">
-                    <div class="card h-100 shadow-lg border-0" style="width: 72rem;">
-                        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1000"
-                            class="card-img-top" alt="App Development">
-                        <div class="card-body text-center">
-                            <h5 class="card-title fw-bold text-success">App Development</h5>
-                            <p class="card-text text-muted">Design mobile apps using Flutter and React Native for
-                                Android & iOS.</p>
-                            <a href="roadmap-app.html" class="btn btn-outline-success">Explore Roadmap</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Slide 3 -->
-            <div class="carousel-item">
-                <div class="d-flex justify-content-center">
-                    <div class="card h-100 shadow-lg border-0" style="width: 72rem;">
-                        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1000"
-                            class="card-img-top" alt="AI Development">
-                        <div class="card-body text-center">
-                            <h5 class="card-title fw-bold text-danger">AI & Machine Learning</h5>
-                            <p class="card-text text-muted">Learn AI with Python, TensorFlow, and Data Science to build
-                                smart systems.</p>
-                            <a href="roadmap-ai.html" class="btn btn-outline-danger">Explore Roadmap</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- Carousel Controls -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-    <br>
-
-    <section class="container py-5">
-        <h2 class="text-center mb-4">Choose Your Career Path</h2>
-        <div class="row">
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 shadow-sm">
-                    <img src="https://imgs.search.brave.com/7BsKrTH6rSqgipEYz9I9Q_GP9Ssr_v-fL4LlNuEZTM4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS12ZWN0/b3Ivd2ViLWRldmVs/b3BtZW50LWZsYXQt/bGFuZGluZy1wYWdl/LWNyZWF0aXZlLXRl/YW0tZGVzaWduZXJz/LWRldmVsb3BlcnMt/d29yay10b2dldGhl/ci1pbGx1c3RyYXRp/b24tZnVsbC1zdGFj/ay1kZXZlbG9wbWVu/dC1zb2Z0d2FyZS1l/bmdpbmVlcmluZy13/ZWItcGFnZS1jb21w/b3NpdGlvbi13aXRo/LXBlb3BsZS1jaGFy/YWN0ZXJzXzkyMDkt/MzU0NS5qcGc_c2Vt/dD1haXNfaHlicmlk/Jnc9NzQwJnE9ODA"
-                        class="card-img-top" alt="Web Development">
-                    <div class="card-body">
-                        <h5 class="card-title">Web Development</h5>
-                        <p class="card-text">Learn HTML, CSS, JS, React, and backend development to become a
-                            professional web developer.</p>
-                        <a href="#" class="btn btn-outline-primary">View Roadmap</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 shadow-sm">
-                    <img src="https://imgs.search.brave.com/j9RbY_qUeRRtTGcR_ubsw2YhKYEsXL91F4qF-cQI6ig/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG5p/Lmljb25zY291dC5j/b20vaWxsdXN0cmF0/aW9uL3ByZW1pdW0v/dGh1bWIvYXBwLWRl/dmVsb3BtZW50LWls/bHVzdHJhdGlvbi1z/dmctZG93bmxvYWQt/cG5nLTQ0OTg2OTUu/cG5n"
-                        class="card-img-top" alt="App Development">
-                    <div class="card-body">
-                        <h5 class="card-title">App Development</h5>
-                        <p class="card-text">Master Android and iOS app development with Flutter, Kotlin, or React
-                            Native.</p>
-                        <a href="#" class="btn btn-outline-success">View Roadmap</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 shadow-sm">
-                    <img src="https://imgs.search.brave.com/PS7UDtLh6Co9TP2olcVM_aWTySFybXibKq99Xaos-kk/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4u/a29keXRlY2hub2xh/Yi5jb20vd3AtY29u/dGVudC91cGxvYWRz/LzIwMjUvMDMvYWkt/YW5kLW1sLWRldmVs/b3BtZW50LWNvbXBh/bnktaW4taW5kaWEu/d2VicA"
-                        class="card-img-top" alt="AI Development">
-                    <div class="card-body">
-                        <h5 class="card-title">AI & Machine Learning</h5>
-                        <p class="card-text">Explore AI tools, ML models, and data science concepts to enter the AI
-                            revolution.</p>
-                        <a href="#" class="btn btn-outline-danger">View Roadmap</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <br>
-
-    <div class="div container">
-        <section class="bg-light py-5">
-            <div class="container text-center">
-                <h2 class="mb-4">Why Choose TechFriends?</h2>
-                <div class="row">
-                    <div class="col-md-4">
-                        <i class="bi bi-laptop fs-1 text-primary"></i>
-                        <h5 class="mt-3">Learn by Doing</h5>
-                        <p>Build real-world projects and gain hands-on experience with mentors.</p>
-                    </div>
-                    <div class="col-md-4">
-                        <i class="bi bi-people fs-1 text-success"></i>
-                        <h5 class="mt-3">Community Support</h5>
-                        <p>Join a network of developers, students, and professionals helping each other.</p>
-                    </div>
-                    <div class="col-md-4">
-                        <i class="bi bi-award fs-1 text-warning"></i>
-                        <h5 class="mt-3">Career Guidance</h5>
-                        <p>Get expert mentorship and roadmap to land your dream tech job.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <footer class="bg-dark text-light text-center py-3">
-        <p>&copy; 2025 TechFriends | Designed by Lalit & Team | All Rights Reserved</p>
-        <a href="privacy.html" class="text-light mx-2">Privacy Policy</a> |
-        <a href="termservices.html" class="text-light mx-2">Terms of Service</a>
     </footer>
-
-
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"

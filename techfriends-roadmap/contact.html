@@ -4,109 +4,221 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Contact Us</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>Contact Us | TechFriends</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0d6efd, #6610f2);
+            color: #fff;
+            scroll-behavior: smooth;
+        }
+
+        .navbar {
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 100px 20px 60px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-form label {
+            color: #fff;
+        }
+
+        .form-control {
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 10px;
+        }
+
+        .btn-custom {
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            border: none;
+            border-radius: 10px;
+            padding: 10px 0;
+            font-size: 1.1rem;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-info {
+            margin-top: 40px;
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 25px;
+            border-radius: 15px;
+            transition: 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        iframe {
+            border-radius: 20px;
+            width: 100%;
+            height: 300px;
+            border: 0;
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 20px;
+            margin-top: 60px;
+        }
+
+        footer a {
+            color: #0d6efd;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Bootstrap" width="30"
-                    height="24">
-            </a>
             <a class="navbar-brand" href="index.html">TechFriends</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="contact.html">Contact </a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Technology
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Web Developement</a></li>
-                            <li><a class="dropdown-item" href="#">App Developement</a></li>
-                            <li><a class="dropdown-item" href="#">Desktop Application</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Frontend Development</a></li>
-                            <li><a class="dropdown-item" href="#">Backend Development</a></li>
-                            <li><a class="dropdown-item" href="#">Full Stack Development</a></li>
-                            <li><a class="dropdown-item" href="#">Java Full Stack</a></li>
-                        </ul>
-                    </li>
-
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
                 </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search">
+                    <button class="btn btn-outline-light" type="submit">Search</button>
                 </form>
             </div>
         </div>
     </nav>
-    <section class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-4">Contact Us</h2>
-            <div class="row justify-content-center">
-                <div class="col-md-8">
+
+    <!-- Hero Section -->
+    <section class="hero" data-aos="zoom-in">
+        <h1>📞 Get in Touch with Us</h1>
+        <p class="lead">We’d love to hear from you! Whether you have questions, feedback, or collaboration ideas — reach
+            out anytime.</p>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-6" data-aos="fade-up">
+                <div class="contact-form">
+                    <h3 class="text-center mb-4">Send us a Message 💬</h3>
                     <form>
                         <div class="mb-3">
-                            <label class="form-label">Name</label>
-                            <input type="text" class="form-control" placeholder="Your name">
+                            <label>Name</label>
+                            <input type="text" class="form-control" placeholder="Your Name" required>
                         </div>
                         <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1"
-                                placeholder="Enter the Email Id here">
+                            <label>Email</label>
+                            <input type="email" class="form-control" placeholder="you@example.com" required>
                         </div>
-                        <br>
-                        <label for="inputPassword5" class="form-label">Password</label>
-                        <input type="password" id="inputPassword5" class="form-control"
-                            aria-describedby="passwordHelpBlock">
-                        <div id="passwordHelpBlock" class="form-text">
-                            Your password must be 8-20 characters long, contain letters and numbers, and must not
-                            contain spaces,
-                            special characters, or emoji.
-                        </div>
-                        <br>
-
                         <div class="mb-3">
-                            <label class="form-label">Message</label>
-                            <textarea class="form-control" rows="4" placeholder="Your message"></textarea>
+                            <label>Password</label>
+                            <input type="password" class="form-control" placeholder="Create Password" required>
+                            <small class="text-light">Must be 8–20 characters, letters & numbers only.</small>
                         </div>
-                        <button class="btn btn-success w-100">Send Message</button>
+                        <div class="mb-3">
+                            <label>Message</label>
+                            <textarea class="form-control" rows="4" placeholder="Your message here..."
+                                required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-custom w-100">Send Message</button>
                     </form>
                 </div>
             </div>
         </div>
-    </section>
-    <br>
 
-     <footer class="bg-dark text-light text-center py-3">
+        <!-- Contact Info Cards -->
+        <div class="contact-info text-center mt-5">
+            <div class="row">
+                <div class="col-md-3 mb-3" data-aos="fade-up">
+                    <div class="info-card">
+                        <h5>📍 Location</h5>
+                        <p>Shahada, Maharashtra, India</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="info-card">
+                        <h5>📧 Email</h5>
+                        <p>support@techfriends.in</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="info-card">
+                        <h5>📞 Phone</h5>
+                        <p>+91 78693 04636</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="info-card">
+                        <h5>🌐 Follow Us</h5>
+                        <p>
+                            <a href="https://www.instagram.com/stories/lalit_patil1425/" class="text-light me-2">Instagram</a> |
+                            <a href="https://linkedin.com/in/lalitpatil05" class="text-light ms-2">LinkedIn</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Google Map -->
+        <div class="mt-5" data-aos="fade-up">
+            <h4 class="text-center mb-3">Find Us on Map 🗺️</h4>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.8877562359467!2d72.87765547441713!3d19.1111033519126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b63f06c21c67%3A0xaac2d0b411fba8e0!2sMumbai%20University!5e0!3m2!1sen!2sin!4v1708272215082!5m2!1sen!2sin"
+                allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center text-light">
         <p>&copy; 2025 TechFriends | Designed by Lalit & Team | All Rights Reserved</p>
         <a href="privacy.html" class="text-light mx-2">Privacy Policy</a> |
         <a href="termservices.html" class="text-light mx-2">Terms of Service</a>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000 });
+    </script>
 </body>
 
 </html>

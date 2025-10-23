@@ -4,96 +4,227 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>About Us</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <title>About Us | TechFriends</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Animate on Scroll -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    body {
+      scroll-behavior: smooth;
+      background-color: #f8f9fa;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #0d6efd, #6610f2);
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+      border-bottom-left-radius: 50% 10%;
+      border-bottom-right-radius: 50% 10%;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      transition: 0.3s ease;
+    }
+
+    .stat {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #0d6efd;
+    }
+
+    footer {
+      margin-top: 40px;
+    }
+
+    .team-member img {
+      transition: transform 0.4s;
+    }
+
+    .team-member:hover img {
+      transform: scale(1.08);
+    }
+  </style>
 </head>
 
 <body>
+
+  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">
-        <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Bootstrap" width="30"
-          height="24">
-      </a>
       <a class="navbar-brand" href="index.html">TechFriends</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="about.html">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact </a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Technology
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Web Developement</a></li>
-              <li><a class="dropdown-item" href="#">App Developement</a></li>
-              <li><a class="dropdown-item" href="#">Desktop Application</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" href="#">Frontend Development</a></li>
-              <li><a class="dropdown-item" href="#">Backend Development</a></li>
-              <li><a class="dropdown-item" href="#">Full Stack Development</a></li>
-              <li><a class="dropdown-item" href="#">Java Full Stack</a></li>
-            </ul>
-          </li>
-
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
         <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+          <input class="form-control me-2" type="search" placeholder="Search">
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
       </div>
     </div>
   </nav>
-  <br>
 
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1 data-aos="fade-up">Welcome to <span class="text-warning">TechFriends</span></h1>
+    <p class="lead" data-aos="fade-up" data-aos-delay="100">Empowering Students. Building Futures. Driving Innovation.</p>
+  </section>
 
-  <div class="div container">
-    <section class="bg-light py-5">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-md-6">
-            <img
-              src="data:image/jpeg;base64,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"
-              class="img-fluid rounded" alt="About us">
+  <!-- About Section -->
+  <section class="container py-5">
+    <div class="row align-items-center">
+      <div class="col-md-6" data-aos="fade-right">
+        <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo.svg" class="img-fluid rounded" alt="About us">
+      </div>
+      <div class="col-md-6" data-aos="fade-left">
+        <h3>About TechFriends</h3>
+        <p>TechFriends is a student-friendly platform that guides learners from beginner to professional. We provide hands-on learning, personalized mentorship, and a strong community to grow your skills and career in technology.</p>
+        <ul>
+          <li>Career roadmap & mentorship</li>
+          <li>Live tech sessions & hackathons</li>
+          <li>Project-based learning</li>
+          <li>Internship & placement support</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Vision -->
+  <section class="bg-white py-5">
+    <div class="container text-center">
+      <h2 data-aos="zoom-in">Our Mission & Vision</h2>
+      <div class="row mt-4">
+        <div class="col-md-4" data-aos="fade-up">
+          <div class="card p-4 shadow-sm">
+            <h5>🎯 Mission</h5>
+            <p>To make every student confident and job-ready with real-world tech skills through community-driven learning.</p>
           </div>
-          <div class="col-md-6">
-            <h3>About TechFriends</h3>
-            <p>TechFriends is a student-friendly platform designed to guide learners from beginner to professional. We
-              help you explore technologies, choose the right career path, and connect with mentors.</p>
-            <ul>
-              <li>Career roadmap & guidance</li>
-              <li>Interactive learning modules</li>
-              <li>Registration & progress tracking</li>
-            </ul>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="card p-4 shadow-sm">
+            <h5>🌍 Vision</h5>
+            <p>To become the most trusted student tech community connecting education, innovation, and industry.</p>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="card p-4 shadow-sm">
+            <h5>💡 Values</h5>
+            <p>Innovation, Collaboration, Inclusivity, and Lifelong Learning.</p>
           </div>
         </div>
       </div>
-    </section>
-  </div>
-  <br>
-   <footer class="bg-dark text-light text-center py-3">
-        <p>&copy; 2025 TechFriends | Designed by Lalit & Team | All Rights Reserved</p>
-        <a href="privacy.html" class="text-light mx-2">Privacy Policy</a> |
-        <a href="termservices.html" class="text-light mx-2">Terms of Service</a>
-    </footer>
+    </div>
+  </section>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-    crossorigin="anonymous"></script>
+  <!-- Stats Section -->
+  <section class="bg-light py-5 text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3" data-aos="fade-up">
+          <div class="stat" id="students">0+</div>
+          <p>Students</p>
+        </div>
+        <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+          <div class="stat" id="mentors">0+</div>
+          <p>Mentors</p>
+        </div>
+        <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+          <div class="stat" id="courses">0+</div>
+          <p>Courses</p>
+        </div>
+        <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+          <div class="stat" id="projects">0+</div>
+          <p>Projects Completed</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="container py-5 text-center">
+    <h2 data-aos="zoom-in">Meet Our Team</h2>
+    <div class="row mt-4">
+      <div class="col-md-3 team-member" data-aos="fade-up">
+        <img src="https://imgs.search.brave.com/8c0XkrGNb7S4ImGRWg1VSkJ9NR2brUD6DwOTfbFmGxE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzE1LzAxLzIyLzg2/LzM2MF9GXzE1MDEy/Mjg2MzBfOXh1elU1/RTk2WmN4dTlkMUlG/Rm1ITndQd2lkazZv/dlEuanBn" class="img-fluid rounded-circle mb-2" width="120">
+        <h6>Lalit</h6>
+        <p>Founder & Developer</p>
+      </div>
+      <div class="col-md-3 team-member" data-aos="fade-up" data-aos-delay="100">
+        <img src="https://imgs.search.brave.com/8c0XkrGNb7S4ImGRWg1VSkJ9NR2brUD6DwOTfbFmGxE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzE1LzAxLzIyLzg2/LzM2MF9GXzE1MDEy/Mjg2MzBfOXh1elU1/RTk2WmN4dTlkMUlG/Rm1ITndQd2lkazZv/dlEuanBn" class="img-fluid rounded-circle mb-2" width="120">
+        <h6>Sumit</h6>
+        <p>UI/UX Designer</p>
+      </div>
+      <div class="col-md-3 team-member" data-aos="fade-up" data-aos-delay="200">
+        <img src="https://imgs.search.brave.com/8c0XkrGNb7S4ImGRWg1VSkJ9NR2brUD6DwOTfbFmGxE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzE1LzAxLzIyLzg2/LzM2MF9GXzE1MDEy/Mjg2MzBfOXh1elU1/RTk2WmN4dTlkMUlG/Rm1ITndQd2lkazZv/dlEuanBn" class="img-fluid rounded-circle mb-2" width="120">
+        <h6>Yogesh</h6>
+        <p>Backend Engineer</p>
+      </div>
+      <div class="col-md-3 team-member" data-aos="fade-up" data-aos-delay="300">
+        <img src="https://imgs.search.brave.com/8c0XkrGNb7S4ImGRWg1VSkJ9NR2brUD6DwOTfbFmGxE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzE1LzAxLzIyLzg2/LzM2MF9GXzE1MDEy/Mjg2MzBfOXh1elU1/RTk2WmN4dTlkMUlG/Rm1ITndQd2lkazZv/dlEuanBn" class="img-fluid rounded-circle mb-2" width="120">
+        <h6>Yash</h6>
+        <p>Community Lead</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Join Section -->
+  <section class="text-center bg-dark text-light py-5" data-aos="fade-up">
+    <h3>🚀 Join the TechFriends Community!</h3>
+    <p>Be part of the next generation of tech innovators and creators.</p>
+    <a href="register.html" class="btn btn-primary mt-3">Join Now</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-light text-center py-3">
+    <p>&copy; 2025 TechFriends | Designed by Lalit & Team | All Rights Reserved</p>
+    <a href="privacy.html" class="text-light mx-2">Privacy Policy</a> |
+    <a href="termservices.html" class="text-light mx-2">Terms of Service</a>
+  </footer>
+
+  <!-- AOS & Counter Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000 });
+
+    // Animated Counters
+    function animateValue(id, start, end, duration) {
+      let obj = document.getElementById(id);
+      let range = end - start;
+      let stepTime = Math.abs(Math.floor(duration / range));
+      let startTime = new Date().getTime();
+      let endTime = startTime + duration;
+
+      function run() {
+        let now = new Date().getTime();
+        let remaining = Math.max((endTime - now) / duration, 0);
+        let value = Math.round(end - (remaining * range));
+        obj.textContent = value + "+";
+        if (value == end) clearInterval(timer);
+      }
+      let timer = setInterval(run, stepTime);
+      run();
+    }
+
+    animateValue("students", 0, 1200, 1500);
+    animateValue("mentors", 0, 75, 1500);
+    animateValue("courses", 0, 30, 1500);
+    animateValue("projects", 0, 150, 1500);
+  </script>
+
 </body>
-
 </html>

@@ -4,108 +4,457 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login</title>
+    <title>Login - TechFriends</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="bg-light">
+<body>
+    <!-- Floating Background Shapes -->
+    <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+    </div>
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">TechFriends</a>
+            <a class="navbar-brand fw-bold" href="index.html">
+                <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Bootstrap" width="30"
+                    height="24" class="d-inline-block align-text-top me-2">
+                TechFriends
+            </a>
+            <div class="d-flex">
+                <a href="register.html" class="btn btn-outline-light me-2">Sign Up</a>
+                <a href="index.html" class="btn btn-primary">Home</a>
+            </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="text-center text-light d-flex align-items-center justify-content-center"
-        style="background: linear-gradient(135deg, #007bff, #6610f2); min-height: 80vh;">
-        <div>
-            <h1 class="display-4 fw-bold">🚀 Empower Your Future with <span class="text-warning">TechFriends</span></h1>
-            <p class="lead mb-4">Join a community of learners and innovators. Build skills for the real world.</p>
-            <div>
-                <a href="register.html" class="btn btn-warning btn-lg me-2">Get Started</a>
-                <a href="index.html" class="btn btn-outline-light btn-lg">Exit</a>
+    <!-- Hero Section with Login Form -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 text-white">
+                    <h1 class="display-4 fw-bold mb-4">🚀 Welcome Back to <span class="text-warning">TechFriends</span>
+                    </h1>
+                    <p class="lead mb-4">Continue your journey with personalized learning paths, community support, and
+                        real-world projects.</p>
+
+                    <!-- Stats -->
+                    <div class="row mb-5">
+                        <div class="col-4">
+                            <div class="stat-number">10K+</div>
+                            <small>Active Learners</small>
+                        </div>
+                        <div class="col-4">
+                            <div class="stat-number">500+</div>
+                            <small>Expert Mentors</small>
+                        </div>
+                        <div class="col-4">
+                            <div class="stat-number">95%</div>
+                            <small>Success Rate</small>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#features" class="btn btn-outline-light">Explore Features</a>
+                        <a href="#testimonials" class="btn btn-outline-light">See Success Stories</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <!-- Login Card -->
+                    <div class="login-card p-4 p-md-5 floating-animation">
+                        <div class="text-center mb-4">
+                            <h2 class="fw-bold text-white">Login to Your Account</h2>
+                            <p class="text-light mb-0">Access your personalized dashboard and continue learning</p>
+                        </div>
+
+                        <form id="loginForm">
+                            <div class="mb-3">
+                                <label for="email" class="form-label text-white">Email Address</label>
+                                <input type="email" class="form-control" id="email" placeholder="Enter your email"
+                                    required>
+                            </div>
+
+                            <div class="mb-3 position-relative">
+                                <label for="password" class="form-label text-white">Password</label>
+                                <input type="password" class="form-control" id="password"
+                                    placeholder="Enter your password" required>
+                                <button type="button" class="password-toggle" id="togglePassword">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                            </div>
+
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="rememberMe">
+                                    <label class="form-check-label text-white" for="rememberMe">Remember me</label>
+                                </div>
+                                <a href="#" class="text-primary">Forgot Password?</a>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary w-100 mb-3 pulse-animation">
+                                <i class="bi bi-box-arrow-in-right me-2"></i> Login to Dashboard
+                            </button>
+
+                            <div class="text-center">
+                                <p class="text-white-50 mb-3">Don't have an account? <a href="register.html"
+                                        class="text-primary fw-bold">Sign Up</a></p>
+                            </div>
+                        </form>
+
+                        <!-- Social Login -->
+                        <div class="text-center mt-4">
+                            <p class="text-white-50 mb-3">Or continue with</p>
+                            <div class="social-login">
+                                <a href="https://google.com" class="social-btn"><i class="bi bi-google"></i></a>
+                                <a href="https://github.com" class="social-btn"><i class="bi bi-github"></i></a>
+                                <a href="https://linkedin.com" class="social-btn"><i class="bi bi-linkedin"></i></a>
+                                <a href="https://twitter.com" class="social-btn"><i class="bi bi-facebook"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Features Section -->
-    <section class="container text-center my-5">
-        <h2 class="fw-bold mb-4">Why Join <span class="text-primary">TechFriends</span>?</h2>
-        <div class="row g-4">
-            <div class="col-md-3">
-                <div class="card shadow-sm border-0 p-4">
-                    <div class="fs-1 text-primary mb-3">💡</div>
-                    <h5>Learn</h5>
-                    <p>Access tutorials and projects that boost your practical skills.</p>
+    <section id="features" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold text-white">Why Join <span class="text-primary">TechFriends</span>?</h2>
+                <p class="text-light">Discover the benefits of being part of our tech community</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-person-check text-white"></i>
+                        </div>
+                        <h5 class="text-white">Personalized Roadmaps</h5>
+                        <p class="text-white-50">Get customized learning paths based on your goals, skills, and
+                            interests.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-people text-white"></i>
+                        </div>
+                        <h5 class="text-white">Community Support</h5>
+                        <p class="text-white-50">Connect with mentors and peers for guidance, code reviews, and
+                            collaboration.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-briefcase text-white"></i>
+                        </div>
+                        <h5 class="text-white">Career Opportunities</h5>
+                        <p class="text-white-50">Access job boards, internship opportunities, and career guidance.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-laptop text-white"></i>
+                        </div>
+                        <h5 class="text-white">Real Projects</h5>
+                        <p class="text-white-50">Build portfolio-worthy projects with modern technologies and best
+                            practices.</p>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="card shadow-sm border-0 p-4">
-                    <div class="fs-1 text-success mb-3">⚙️</div>
-                    <h5>Build</h5>
-                    <p>Create real-world applications with modern technologies.</p>
+
+            <div class="row g-4 mt-2">
+                <div class="col-md-3">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-graph-up text-white"></i>
+                        </div>
+                        <h5 class="text-white">Progress Tracking</h5>
+                        <p class="text-white-50">Monitor your learning journey with detailed analytics and milestone
+                            tracking.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-award text-white"></i>
+                        </div>
+                        <h5 class="text-white">Certifications</h5>
+                        <p class="text-white-50">Earn recognized certificates to showcase your skills to employers.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-chat-dots text-white"></i>
+                        </div>
+                        <h5 class="text-white">Live Mentoring</h5>
+                        <p class="text-white-50">Get real-time help from industry experts through live sessions and Q&A.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-code-slash text-white"></i>
+                        </div>
+                        <h5 class="text-white">Code Challenges</h5>
+                        <p class="text-white-50">Sharpen your skills with weekly coding challenges and hackathons.</p>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="card shadow-sm border-0 p-4">
-                    <div class="fs-1 text-danger mb-3">🤝</div>
-                    <h5>Collaborate</h5>
-                    <p>Connect with like-minded developers and innovators.</p>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section py-5">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3 col-6 stat-item">
+                    <div class="stat-number">10,000+</div>
+                    <p class="text-white">Students Enrolled</p>
                 </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card shadow-sm border-0 p-4">
-                    <div class="fs-1 text-warning mb-3">🚀</div>
-                    <h5>Grow</h5>
-                    <p>Gain mentorship and opportunities to showcase your talent.</p>
+                <div class="col-md-3 col-6 stat-item">
+                    <div class="stat-number">500+</div>
+                    <p class="text-white">Expert Mentors</p>
+                </div>
+                <div class="col-md-3 col-6 stat-item">
+                    <div class="stat-number">95%</div>
+                    <p class="text-white">Job Placement Rate</p>
+                </div>
+                <div class="col-md-3 col-6 stat-item">
+                    <div class="stat-number">50+</div>
+                    <p class="text-white">Learning Paths</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Testimonials Section -->
-    <section class="bg-primary text-light py-5">
-        <div class="container text-center">
-            <h2 class="fw-bold mb-4">What Our Members Say</h2>
-            <div class="row justify-content-center">
-                <div class="col-md-4">
-                    <blockquote class="blockquote">
-                        <p>"TechFriends helped me land my first internship!"</p>
-                    </blockquote>
-                    <footer class="blockquote-footer text-light">Anjali, Student Developer</footer>
+    <section id="testimonials" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold text-white">What Our Members Say</h2>
+                <p class="text-light">Real stories from our TechFriends community</p>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://imgs.search.brave.com/DvApFoAvRQFJGrbOzC445I1OSQzObSV5JLDRvWTvlmg/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly9jZG4t/aWNvbnMtcG5nLmZs/YXRpY29uLmNvbS8x/MjgvMTc0NDYvMTc0/NDY4MzMucG5n"
+                                class="testimonial-img" alt="Student">
+                            <div>
+                                <h5 class="mb-0 text-white">Lalit Patil</h5>
+                                <p class="text-muted mb-0">Web Developer at TechCorp</p>
+                            </div>
+                        </div>
+                        <p class="text-white-50">"TechFriends completely transformed my career. The structured roadmap
+                            and mentor support helped me land my dream job in just 6 months!"</p>
+                        <div class="text-warning">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <blockquote class="blockquote">
-                        <p>"A perfect platform for collaboration and growth."</p>
-                    </blockquote>
-                    <footer class="blockquote-footer text-light">Ravi, Full Stack Learner</footer>
+
+                <div class="col-md-6 mb-4">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://imgs.search.brave.com/DvApFoAvRQFJGrbOzC445I1OSQzObSV5JLDRvWTvlmg/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly9jZG4t/aWNvbnMtcG5nLmZs/YXRpY29uLmNvbS8x/MjgvMTc0NDYvMTc0/NDY4MzMucG5n"
+                                class="testimonial-img" alt="Student">
+                            <div>
+                                <h5 class="mb-0 text-white">Yash Patil</h5>
+                                <p class="text-muted mb-0">Full Stack Developer</p>
+                            </div>
+                        </div>
+                        <p class="text-white-50">"The project-based learning approach was exactly what I needed. I built
+                            5 real apps during the course that became the highlight of my portfolio."</p>
+                        <div class="text-warning">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://imgs.search.brave.com/DvApFoAvRQFJGrbOzC445I1OSQzObSV5JLDRvWTvlmg/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly9jZG4t/aWNvbnMtcG5nLmZs/YXRpY29uLmNvbS8x/MjgvMTc0NDYvMTc0/NDY4MzMucG5n"
+                                class="testimonial-img" alt="Student">
+                            <div>
+                                <h5 class="mb-0 text-white">Sumit Patil</h5>
+                                <p class="text-muted mb-0">Data Scientist</p>
+                            </div>
+                        </div>
+                        <p class="text-white-50">"The AI & ML path was comprehensive and up-to-date with industry
+                            trends. The mentorship program helped me navigate complex concepts with ease."</p>
+                        <div class="text-warning">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-half"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-4">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://imgs.search.brave.com/DvApFoAvRQFJGrbOzC445I1OSQzObSV5JLDRvWTvlmg/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly9jZG4t/aWNvbnMtcG5nLmZs/YXRpY29uLmNvbS8x/MjgvMTc0NDYvMTc0/NDY4MzMucG5n"
+                                class="testimonial-img" alt="Student">
+                            <div>
+                                <h5 class="mb-0 text-white">Yogesh Badgujar</h5>
+                                <p class="text-muted mb-0">Mobile App Developer</p>
+                            </div>
+                        </div>
+                        <p class="text-white-50">"I tried multiple online courses before, but TechFriends' community
+                            support made all the difference. The peer learning and code reviews were invaluable."</p>
+                        <div class="text-warning">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Call-to-Action Section -->
-    <section class="text-center py-5 bg-light">
+    <section class="text-center py-5">
         <div class="container">
-            <h3 class="fw-bold mb-4">Ready to Begin Your Journey?</h3>
-            <a href="register.html" class="btn btn-primary btn-lg px-5">Join Now</a>
+            <div class="login-card p-5">
+                <h3 class="fw-bold text-white mb-4">Ready to Continue Your Journey?</h3>
+                <p class="text-light mb-4">Login to access your personalized dashboard and continue learning</p>
+                <button class="btn btn-outline-light btn-lg px-5" data-bs-toggle="modal" data-bs-target="#signinModal">Login</button>
+                <a href="register.html" class="btn btn-outline-light btn-lg px-5">Create Account</a>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark text-light text-center py-3">
-        <p>&copy; 2025 TechFriends | Designed by Lalit & Team | All Rights Reserved</p>
-        <div>
+    <footer class="bg-dark text-light text-center py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5>TechFriends</h5>
+                    <p>Empowering students to build successful tech careers through structured learning paths and
+                        community support.</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-light">Home</a></li>
+                        <li><a href="about.html" class="text-light">About Us</a></li>
+                        <li><a href="contact.html" class="text-light">Contact</a></li>
+                        <li><a href="#" class="text-light">Learning Paths</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Connect With Us</h5>
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="#" class="text-light"><i class="bi bi-facebook fs-4"></i></a>
+                        <a href="#" class="text-light"><i class="bi bi-twitter fs-4"></i></a>
+                        <a href="#" class="text-light"><i class="bi bi-linkedin fs-4"></i></a>
+                        <a href="#" class="text-light"><i class="bi bi-instagram fs-4"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <p>&copy; 2025 TechFriends | Designed by Lalit & Team | All Rights Reserved</p>
             <a href="privacy.html" class="text-light mx-2">Privacy Policy</a> |
             <a href="termservices.html" class="text-light mx-2">Terms of Service</a>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-</body>
 
+    <script>
+        // Password toggle functionality
+        document.getElementById('togglePassword').addEventListener('click', function () {
+            const passwordInput = document.getElementById('password');
+            const icon = this.querySelector('i');
+
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                icon.classList.remove('bi-eye');
+                icon.classList.add('bi-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                icon.classList.remove('bi-eye-slash');
+                icon.classList.add('bi-eye');
+            }
+        });
+
+        // Form submission
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Simple validation
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            if (email && password) {
+                // Show loading state
+                const submitBtn = this.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<i class="bi bi-arrow-repeat spinner"></i> Logging in...';
+                submitBtn.disabled = true;
+
+                // Simulate API call
+                setTimeout(() => {
+                    // Redirect to dashboard
+                    window.location.href = 'index0.html';
+                }, 1500);
+            }
+        });
+
+        // Add smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
 
 </html>
