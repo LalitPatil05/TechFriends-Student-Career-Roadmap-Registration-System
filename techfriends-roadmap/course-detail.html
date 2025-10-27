@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Development - TechFriends</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/course-detail.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>TechFriends</span>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="roadmap.html" class="nav-link">Roadmaps</a>
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+                <div class="nav-actions">
+                    <button class="search-btn" id="searchToggle">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <div class="user-menu">
+                        <button class="user-btn" id="userToggle">
+                            <img src="https://ui-avatars.com/api/?name=Demo+User&background=6366f1&color=fff" alt="User" class="user-avatar">
+                            <span class="user-name">Demo User</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="user-dropdown" id="userDropdown">
+                            <div class="user-info">
+                                <img src="https://ui-avatars.com/api/?name=Demo+User&background=6366f1&color=fff" alt="User" class="user-avatar">
+                                <div class="user-details">
+                                    <strong>Demo User</strong>
+                                    <span>student@demo.com</span>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <a href="profile.html" class="dropdown-item">
+                                <i class="fas fa-user-edit"></i>
+                                Edit Profile
+                            </a>
+                            <a href="settings.html" class="dropdown-item">
+                                <i class="fas fa-cog"></i>
+                                Settings
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" class="dropdown-item logout-btn">
+                                <i class="fas fa-sign-out-alt"></i>
+                                Logout
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Course Header -->
+    <section class="course-header">
+        <div class="container">
+            <div class="course-hero">
+                <div class="course-breadcrumb">
+                    <a href="roadmap.html">Roadmaps</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <a href="roadmap.html#web">Web Development</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span>Frontend Development</span>
+                </div>
+                
+                <div class="course-hero-content">
+                    <div class="course-info">
+                        <div class="course-badge">
+                            <span class="badge popular">Most Popular</span>
+                            <span class="badge level">Intermediate</span>
+                        </div>
+                        <h1>Frontend Development Mastery</h1>
+                        <p class="course-subtitle">Master modern frontend technologies including React, Vue, Angular, and build responsive, interactive web applications</p>
+                        
+                        <div class="course-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-star"></i>
+                                <span>4.8 (2,450 reviews)</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-users"></i>
+                                <span>15,000+ students</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-clock"></i>
+                                <span>48 hours total</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-signal"></i>
+                                <span>Intermediate level</span>
+                            </div>
+                        </div>
+                        
+                        <div class="course-actions">
+                            <button class="btn btn-primary btn-large" id="enrollBtn">
+                                <i class="fas fa-shopping-cart"></i>
+                                Enroll Now - $49.99
+                            </button>
+                            <button class="btn btn-outline btn-large" id="wishlistBtn">
+                                <i class="far fa-heart"></i>
+                                Add to Wishlist
+                            </button>
+                            <button class="btn btn-text" id="shareBtn">
+                                <i class="fas fa-share"></i>
+                                Share
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="course-preview">
+                        <div class="preview-card">
+                            <div class="preview-video">
+                                <div class="video-placeholder">
+                                    <i class="fas fa-play-circle"></i>
+                                    <span>Course Preview</span>
+                                </div>
+                            </div>
+                            <div class="preview-features">
+                                <div class="feature">
+                                    <i class="fas fa-play-circle"></i>
+                                    <span>128 video lessons</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-file-alt"></i>
+                                    <span>45 coding exercises</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-infinity"></i>
+                                    <span>Lifetime access</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    <span>Access on mobile</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Content -->
+    <section class="course-content">
+        <div class="container">
+            <div class="content-layout">
+                <!-- Main Content -->
+                <main class="course-main">
+                    <!-- Overview Tab -->
+                    <div class="content-tab active" id="overview">
+                        <div class="tab-section">
+                            <h2>What You'll Learn</h2>
+                            <div class="learning-objectives">
+                                <div class="objective-grid">
+                                    <div class="objective">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Build responsive websites with HTML5, CSS3, and JavaScript</span>
+                                    </div>
+                                    <div class="objective">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Master React.js with hooks, context, and advanced patterns</span>
+                                    </div>
+                                    <div class="objective">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Create interactive UIs with modern CSS frameworks</span>
+                                    </div>
+                                    <div class="objective">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Implement state management with Redux and Context API</span>
+                                    </div>
+                                    <div class="objective">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Work with APIs and handle asynchronous operations</span>
+                                    </div>
+                                    <div class="objective">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Deploy applications to production environments</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-section">
+                            <h2>Course Content</h2>
+                            <div class="curriculum">
+                                <div class="module">
+                                    <div class="module-header">
+                                        <div class="module-info">
+                                            <h3>Module 1: HTML & CSS Fundamentals</h3>
+                                            <span>12 lessons • 2h 30m</span>
+                                        </div>
+                                        <div class="module-progress">
+                                            <span>100% complete</span>
+                                            <div class="progress-bar">
+                                                <div class="progress-fill" style="width: 100%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="lessons">
+                                        <div class="lesson completed">
+                                            <div class="lesson-info">
+                                                <i class="fas fa-play-circle"></i>
+                                                <div>
+                                                    <h4>Introduction to HTML5</h4>
+                                                    <span>15 min • Video</span>
+                                                </div>
+                                            </div>
+                                            <div class="lesson-actions">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                        </div>
+                                        <div class="lesson completed">
+                                            <div class="lesson-info">
+                                                <i class="fas fa-play-circle"></i>
+                                                <div>
+                                                    <h4>CSS3 Selectors and Box Model</h4>
+                                                    <span>25 min • Video + Exercise</span>
+                                                </div>
+                                            </div>
+                                            <div class="lesson-actions">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                        </div>
+                                        <div class="lesson completed">
+                                            <div class="lesson-info">
+                                                <i class="fas fa-play-circle"></i>
+                                                <div>
+                                                    <h4>Flexbox and Grid Layouts</h4>
+                                                    <span>35 min • Video</span>
+                                                </div>
+                                            </div>
+                                            <div class="lesson-actions">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="module">
+                                    <div class="module-header">
+                                        <div class="module-info">
+                                            <h3>Module 2: JavaScript Mastery</h3>
+                                            <span>24 lessons • 8h 15m</span>
+                                        </div>
+                                        <div class="module-progress">
+                                            <span>65% complete</span>
+                                            <div class="progress-bar">
+                                                <div class="progress-fill" style="width: 65%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="lessons">
+                                        <div class="lesson completed">
+                                            <div class="lesson-info">
+                                                <i class="fas fa-play-circle"></i>
+                                                <div>
+                                                    <h4>JavaScript Basics and ES6+</h4>
+                                                    <span>45 min • Video</span>
+                                                </div>
+                                            </div>
+                                            <div class="lesson-actions">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                        </div>
+                                        <div class="lesson completed">
+                                            <div class="lesson-info">
+                                                <i class="fas fa-play-circle"></i>
+                                                <div>
+                                                    <h4>DOM Manipulation</h4>
+                                                    <span>30 min • Video + Exercise</span>
+                                                </div>
+                                            </div>
+                                            <div class="lesson-actions">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                        </div>
+                                        <div class="lesson current">
+                                            <div class="lesson-info">
+                                                <i class="fas fa-play-circle"></i>
+                                                <div>
+                                                    <h4>Asynchronous JavaScript</h4>
+                                                    <span>50 min • Video</span>
+                                                </div>
+                                            </div>
+                                            <div class="lesson-actions">
+                                                <button class="btn btn-primary btn-sm">Continue</button>
+                                            </div>
+                                        </div>
+                                        <div class="lesson upcoming">
+                                            <div class="lesson-info">
+                                                <i class="fas fa-play-circle"></i>
+                                                <div>
+                                                    <h4>Modern JavaScript Patterns</h4>
+                                                    <span>40 min • Video + Exercise</span>
+                                                </div>
+                                            </div>
+                                            <div class="lesson-actions">
+                                                <span class="locked">Locked</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="module">
+                                    <div class="module-header">
+                                        <div class="module-info">
+                                            <h3>Module 3: React.js Fundamentals</h3>
+                                            <span>18 lessons • 6h 20m</span>
+                                        </div>
+                                        <div class="module-progress">
+                                            <span>0% complete</span>
+                                            <div class="progress-bar">
+                                                <div class="progress-fill" style="width: 0%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="lessons">
+                                        <div class="lesson upcoming">
+                                            <div class="lesson-info">
+                                                <i class="fas fa-play-circle"></i>
+                                                <div>
+                                                    <h4>React Components and JSX</h4>
+                                                    <span>35 min • Video</span>
+                                                </div>
+                                            </div>
+                                            <div class="lesson-actions">
+                                                <span class="locked">Locked</span>
+                                            </div>
+                                        </div>
+                                        <div class="lesson upcoming">
+                                            <div class="lesson-info">
+                                                <i class="fas fa-play-circle"></i>
+                                                <div>
+                                                    <h4>State and Props</h4>
+                                                    <span>45 min • Video + Exercise</span>
+                                                </div>
+                                            </div>
+                                            <div class="lesson-actions">
+                                                <span class="locked">Locked</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-section">
+                            <h2>Requirements</h2>
+                            <div class="requirements">
+                                <ul>
+                                    <li>Basic understanding of HTML and CSS</li>
+                                    <li>Familiarity with any programming language (helpful but not required)</li>
+                                    <li>Computer with internet connection</li>
+                                    <li>Code editor (VS Code recommended)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="tab-section">
+                            <h2>Description</h2>
+                            <div class="course-description">
+                                <p>Welcome to the most comprehensive frontend development course on TechFriends! This course will take you from beginner to job-ready frontend developer.</p>
+                                
+                                <p>You'll start with the fundamentals of HTML5, CSS3, and modern JavaScript (ES6+). Then, you'll dive deep into React.js, learning hooks, context API, and state management. We'll also cover advanced topics like performance optimization, testing, and deployment.</p>
+                                
+                                <h4>What makes this course different?</h4>
+                                <ul>
+                                    <li><strong>Project-based learning:</strong> Build 5+ real-world projects</li>
+                                    <li><strong>Latest technologies:</strong> Learn cutting-edge tools and frameworks</li>
+                                    <li><strong>Career support:</strong> Resume reviews and interview preparation</li>
+                                    <li><strong>Community access:</strong> Join our exclusive student community</li>
+                                </ul>
+                                
+                                <p>By the end of this course, you'll have the skills and confidence to build professional web applications and start your career as a frontend developer.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Curriculum Tab -->
+                    <div class="content-tab" id="curriculum">
+                        <!-- Detailed curriculum content would go here -->
+                    </div>
+
+                    <!-- Reviews Tab -->
+                    <div class="content-tab" id="reviews">
+                        <div class="reviews-section">
+                            <div class="reviews-header">
+                                <div class="rating-overview">
+                                    <div class="average-rating">
+                                        <h2>4.8</h2>
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                        </div>
+                                        <span>Course Rating</span>
+                                    </div>
+                                    <div class="rating-breakdown">
+                                        <div class="rating-bar">
+                                            <span>5 stars</span>
+                                            <div class="bar">
+                                                <div class="fill" style="width: 75%"></div>
+                                            </div>
+                                            <span>75%</span>
+                                        </div>
+                                        <div class="rating-bar">
+                                            <span>4 stars</span>
+                                            <div class="bar">
+                                                <div class="fill" style="width: 20%"></div>
+                                            </div>
+                                            <span>20%</span>
+                                        </div>
+                                        <div class="rating-bar">
+                                            <span>3 stars</span>
+                                            <div class="bar">
+                                                <div class="fill" style="width: 3%"></div>
+                                            </div>
+                                            <span>3%</span>
+                                        </div>
+                                        <div class="rating-bar">
+                                            <span>2 stars</span>
+                                            <div class="bar">
+                                                <div class="fill" style="width: 1%"></div>
+                                            </div>
+                                            <span>1%</span>
+                                        </div>
+                                        <div class="rating-bar">
+                                            <span>1 star</span>
+                                            <div class="bar">
+                                                <div class="fill" style="width: 1%"></div>
+                                            </div>
+                                            <span>1%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="reviews-list">
+                                <div class="review">
+                                    <div class="review-header">
+                                        <img src="https://ui-avatars.com/api/?name=John+Doe&background=6366f1&color=fff" alt="John Doe" class="review-avatar">
+                                        <div class="reviewer-info">
+                                            <h4>John Doe</h4>
+                                            <div class="review-meta">
+                                                <div class="stars">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                                <span>2 weeks ago</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="review-content">
+                                        <h4>Excellent course for modern frontend development!</h4>
+                                        <p>This course completely transformed my understanding of React and modern JavaScript. The projects are realistic and the instructor explains complex concepts in an easy-to-understand way. Highly recommended!</p>
+                                    </div>
+                                    <div class="review-helpful">
+                                        <span>Was this review helpful?</span>
+                                        <button class="btn-text">Yes</button>
+                                        <button class="btn-text">No</button>
+                                    </div>
+                                </div>
+
+                                <div class="review">
+                                    <div class="review-header">
+                                        <img src="https://ui-avatars.com/api/?name=Sarah+Wilson&background=6366f1&color=fff" alt="Sarah Wilson" class="review-avatar">
+                                        <div class="reviewer-info">
+                                            <h4>Sarah Wilson</h4>
+                                            <div class="review-meta">
+                                                <div class="stars">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star-half-alt"></i>
+                                                </div>
+                                                <span>1 month ago</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="review-content">
+                                        <h4>Great content, well structured</h4>
+                                        <p>The course is very comprehensive and the progression from basics to advanced topics is smooth. The exercises are challenging but achievable. The only suggestion would be to include more real-world project examples.</p>
+                                    </div>
+                                    <div class="review-helpful">
+                                        <span>Was this review helpful?</span>
+                                        <button class="btn-text">Yes</button>
+                                        <button class="btn-text">No</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+
+                <!-- Sidebar -->
+                <aside class="course-sidebar">
+                    <div class="sidebar-widget">
+                        <div class="pricing-card">
+                            <div class="price">$49.99</div>
+                            <div class="price-note">One-time payment, lifetime access</div>
+                            
+                            <div class="pricing-features">
+                                <div class="feature">
+                                    <i class="fas fa-check"></i>
+                                    <span>Full lifetime access</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-check"></i>
+                                    <span>128 video lessons</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-check"></i>
+                                    <span>45 coding exercises</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-check"></i>
+                                    <span>5 real-world projects</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-check"></i>
+                                    <span>Certificate of completion</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-check"></i>
+                                    <span>Community access</span>
+                                </div>
+                            </div>
+                            
+                            <button class="btn btn-primary btn-full" id="sidebarEnrollBtn">
+                                <i class="fas fa-shopping-cart"></i>
+                                Enroll Now
+                            </button>
+                            
+                            <div class="money-back">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>30-day money-back guarantee</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-widget">
+                        <h3>This course includes</h3>
+                        <div class="included-features">
+                            <div class="included-item">
+                                <i class="fas fa-play-circle"></i>
+                                <span>48 hours on-demand video</span>
+                            </div>
+                            <div class="included-item">
+                                <i class="fas fa-file-alt"></i>
+                                <span>45 articles and resources</span>
+                            </div>
+                            <div class="included-item">
+                                <i class="fas fa-download"></i>
+                                <span>Downloadable resources</span>
+                            </div>
+                            <div class="included-item">
+                                <i class="fas fa-infinity"></i>
+                                <span>Full lifetime access</span>
+                            </div>
+                            <div class="included-item">
+                                <i class="fas fa-mobile-alt"></i>
+                                <span>Access on mobile and TV</span>
+                            </div>
+                            <div class="included-item">
+                                <i class="fas fa-trophy"></i>
+                                <span>Certificate of completion</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-widget">
+                        <h3>Instructor</h3>
+                        <div class="instructor-card">
+                            <img src="https://ui-avatars.com/api/?name=Alex+Johnson&background=6366f1&color=fff&size=100" alt="Alex Johnson" class="instructor-avatar">
+                            <div class="instructor-info">
+                                <h4>Alex Johnson</h4>
+                                <p>Senior Frontend Engineer</p>
+                                <div class="instructor-stats">
+                                    <div class="stat">
+                                        <strong>4.8</strong>
+                                        <span>Instructor Rating</span>
+                                    </div>
+                                    <div class="stat">
+                                        <strong>45,231</strong>
+                                        <span>Students</span>
+                                    </div>
+                                    <div class="stat">
+                                        <strong>12</strong>
+                                        <span>Courses</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline btn-full">
+                                <i class="fas fa-user"></i>
+                                View Profile
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-widget">
+                        <h3>Share this course</h3>
+                        <div class="share-buttons">
+                            <button class="share-btn facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </button>
+                            <button class="share-btn twitter">
+                                <i class="fab fa-twitter"></i>
+                            </button>
+                            <button class="share-btn linkedin">
+                                <i class="fab fa-linkedin-in"></i>
+                            </button>
+                            <button class="share-btn link">
+                                <i class="fas fa-link"></i>
+                            </button>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Courses -->
+    <section class="related-courses">
+        <div class="container">
+            <h2>You might also like</h2>
+            <div class="courses-grid">
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="https://via.placeholder.com/300x200/6366f1/ffffff?text=React+Advanced" alt="React Advanced">
+                    </div>
+                    <div class="course-content">
+                        <h3>React Advanced Patterns</h3>
+                        <p>Master advanced React patterns and performance optimization</p>
+                        <div class="course-meta">
+                            <span class="rating">4.9</span>
+                            <span class="students">8,450 students</span>
+                        </div>
+                        <div class="price">$39.99</div>
+                    </div>
+                </div>
+                
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="https://via.placeholder.com/300x200/8b5cf6/ffffff?text=Vue+Mastery" alt="Vue Mastery">
+                    </div>
+                    <div class="course-content">
+                        <h3>Vue.js Mastery</h3>
+                        <p>Complete guide to Vue 3 and ecosystem</p>
+                        <div class="course-meta">
+                            <span class="rating">4.7</span>
+                            <span class="students">6,120 students</span>
+                        </div>
+                        <div class="price">$34.99</div>
+                    </div>
+                </div>
+                
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="https://via.placeholder.com/300x200/10b981/ffffff?text=JavaScript+Pro" alt="JavaScript Pro">
+                    </div>
+                    <div class="course-content">
+                        <h3>JavaScript Professional</h3>
+                        <p>Advanced JavaScript concepts and patterns</p>
+                        <div class="course-meta">
+                            <span class="rating">4.8</span>
+                            <span class="students">12,340 students</span>
+                        </div>
+                        <div class="price">$29.99</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>How long do I have access to the course?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You get lifetime access to this course. After enrolling, you have unlimited access to all course materials, including any future updates, for as long as you like.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>What if I'm not happy with the course?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We offer a 30-day money-back guarantee. If you're not satisfied with the course for any reason, you can get a full refund within 30 days of purchase.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Do I need any prior experience?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Basic familiarity with HTML and CSS is helpful but not required. The course starts from the fundamentals and gradually progresses to advanced topics.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Will I receive a certificate?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, you'll receive a certificate of completion that you can share on LinkedIn and include in your resume after finishing all course requirements.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enrollment Modal -->
+    <div id="enrollmentModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Enroll in Frontend Development Mastery</h3>
+                <button class="modal-close" onclick="closeEnrollmentModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="enrollment-content">
+                    <div class="course-summary">
+                        <div class="course-thumbnail">
+                            <img src="https://via.placeholder.com/100x100/6366f1/ffffff?text=FD" alt="Course">
+                        </div>
+                        <div class="course-details">
+                            <h4>Frontend Development Mastery</h4>
+                            <div class="price">$49.99</div>
+                            <div class="features">
+                                <span><i class="fas fa-check"></i> Lifetime access</span>
+                                <span><i class="fas fa-check"></i> Certificate included</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="payment-methods">
+                        <h4>Payment Method</h4>
+                        <div class="payment-options">
+                            <label class="payment-option">
+                                <input type="radio" name="payment" value="card" checked>
+                                <div class="option-content">
+                                    <i class="fas fa-credit-card"></i>
+                                    <span>Credit/Debit Card</span>
+                                </div>
+                            </label>
+                            <label class="payment-option">
+                                <input type="radio" name="payment" value="paypal">
+                                <div class="option-content">
+                                    <i class="fab fa-paypal"></i>
+                                    <span>PayPal</span>
+                                </div>
+                            </label>
+                            <label class="payment-option">
+                                <input type="radio" name="payment" value="crypto">
+                                <div class="option-content">
+                                    <i class="fas fa-coins"></i>
+                                    <span>Cryptocurrency</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="enrollment-actions">
+                        <button class="btn btn-primary btn-full btn-large" onclick="processEnrollment()">
+                            <i class="fas fa-lock"></i>
+                            Complete Enrollment - $49.99
+                        </button>
+                        <p class="security-note">
+                            <i class="fas fa-shield-alt"></i>
+                            Your payment is secure and encrypted
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/script.js"></script>
+    <script src="scripts/course-detail.js"></script>
+</body>
+</html>

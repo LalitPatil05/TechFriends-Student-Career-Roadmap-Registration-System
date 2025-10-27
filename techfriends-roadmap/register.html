@@ -1,863 +1,235 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Registration Form - TechFriends</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-  <style>
-    :root {
-      --primary-color: #4361ee;
-      --secondary-color: #3f37c9;
-      --accent-color: #4895ef;
-      --success-color: #4cc9f0;
-      --light-color: #f8f9fa;
-      --dark-color: #212529;
-      --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    }
-
-    body {
-      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-        url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
-    .navbar {
-      backdrop-filter: blur(10px);
-      background-color: rgba(33, 37, 41, 0.9) !important;
-    }
-
-    .glassy-card {
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(15px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 20px;
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-      overflow: hidden;
-    }
-
-    .form-control,
-    .form-select {
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      color: white;
-      border-radius: 10px;
-      transition: all 0.3s ease;
-    }
-
-    .form-control:focus,
-    .form-select:focus {
-      background: rgba(255, 255, 255, 0.15);
-      border-color: var(--accent-color);
-      box-shadow: 0 0 0 0.25rem rgba(67, 97, 238, 0.25);
-      color: white;
-    }
-
-    .form-control::placeholder {
-      color: rgba(255, 255, 255, 0.6);
-    }
-
-    .form-floating>label {
-      color: rgba(255, 255, 255, 0.7);
-    }
-
-    .form-floating>.form-control:focus~label,
-    .form-floating>.form-control:not(:placeholder-shown)~label {
-      color: var(--accent-color);
-    }
-
-    .btn-primary {
-      background: var(--gradient);
-      border: none;
-      border-radius: 50px;
-      padding: 12px 40px;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    }
-
-    .btn-primary::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-      transition: 0.5s;
-    }
-
-    .btn-primary:hover::after {
-      left: 100%;
-    }
-
-    .feature-icon {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      background: var(--gradient);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 15px;
-      font-size: 1.5rem;
-    }
-
-    .progress-container {
-      margin-bottom: 30px;
-    }
-
-    .progress-label {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 5px;
-      color: white;
-    }
-
-    .progress {
-      height: 8px;
-      border-radius: 10px;
-      background: rgba(255, 255, 255, 0.1);
-    }
-
-    .progress-bar {
-      background: var(--gradient);
-      border-radius: 10px;
-    }
-
-    .floating-animation {
-      animation: float 6s ease-in-out infinite;
-    }
-
-    @keyframes float {
-      0% {
-        transform: translateY(0px);
-      }
-
-      50% {
-        transform: translateY(-15px);
-      }
-
-      100% {
-        transform: translateY(0px);
-      }
-    }
-
-    .pulse-animation {
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0% {
-        transform: scale(1);
-      }
-
-      50% {
-        transform: scale(1.05);
-      }
-
-      100% {
-        transform: scale(1);
-      }
-    }
-
-    .step-indicator {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 30px;
-    }
-
-    .step {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 10px;
-      color: white;
-      font-weight: bold;
-      transition: all 0.3s ease;
-    }
-
-    .step.active {
-      background: var(--gradient);
-      transform: scale(1.1);
-    }
-
-    .step-line {
-      flex: 1;
-      height: 3px;
-      background: rgba(255, 255, 255, 0.2);
-      margin: 0 5px;
-      align-self: center;
-    }
-
-    .form-step {
-      display: none;
-    }
-
-    .form-step.active {
-      display: block;
-      animation: fadeIn 0.5s ease;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .password-strength {
-      height: 5px;
-      border-radius: 5px;
-      margin-top: 5px;
-      transition: all 0.3s ease;
-    }
-
-    .strength-weak {
-      background: #ff4d4d;
-      width: 25%;
-    }
-
-    .strength-medium {
-      background: #ffa500;
-      width: 50%;
-    }
-
-    .strength-strong {
-      background: #4CAF50;
-      width: 75%;
-    }
-
-    .strength-very-strong {
-      background: #2E7D32;
-      width: 100%;
-    }
-
-    .social-login {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin-top: 20px;
-    }
-
-    .social-btn {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      color: white;
-      transition: all 0.3s ease;
-    }
-
-    .social-btn:hover {
-      background: rgba(255, 255, 255, 0.2);
-      transform: translateY(-3px);
-    }
-
-    .feature-card {
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 15px;
-      padding: 25px;
-      text-align: center;
-      transition: all 0.3s ease;
-      height: 100%;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .feature-card:hover {
-      transform: translateY(-10px);
-      background: rgba(255, 255, 255, 0.1);
-    }
-
-    .floating-shapes {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      overflow: hidden;
-      z-index: -1;
-    }
-
-    .shape {
-      position: absolute;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.03);
-    }
-
-    .shape-1 {
-      width: 300px;
-      height: 300px;
-      top: -150px;
-      right: -100px;
-    }
-
-    .shape-2 {
-      width: 200px;
-      height: 200px;
-      bottom: -100px;
-      left: -50px;
-    }
-
-    footer {
-      backdrop-filter: blur(10px);
-      background-color: rgba(33, 37, 41, 0.9) !important;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - TechFriends</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/auth.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
-
 <body>
-  <!-- Floating Background Shapes -->
-  <div class="floating-shapes">
-    <div class="shape shape-1"></div>
-    <div class="shape shape-2"></div>
-  </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>TechFriends</span>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="roadmap.html" class="nav-link">Roadmaps</a>
+                <a href="login.html" class="nav-link">Login</a>
+                <a href="register.html" class="nav-link active register-btn">Get Started</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Bootstrap" width="30"
-          height="24">
-      </a>
-<<<<<<< HEAD
-      <a class="navbar-brand" href="register.html">TechFriends</a>
-=======
-      <a class="navbar-brand" href="index.html">TechFriends</a>
-      
-      <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button> -->
-      
-      <!-- Login Modal -->
-      <!-- Button trigger modal -->
->>>>>>> d3605e73a530bb1e96dcc0a17008d646f6511f2c
+    <!-- Register Section -->
+    <section class="auth-section">
+        <div class="auth-container">
+            <div class="auth-card">
+                <div class="auth-header">
+                    <h1>Create Your Account</h1>
+                    <p>Start your tech journey with personalized career roadmaps</p>
+                </div>
 
-      <div class="mx-2">
-        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#signinModal">Login</button>
-        <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#signupModal">SignUp</button>
-      </div>
+                <form id="registerForm" class="auth-form">
+                    <div class="form-group">
+                        <label for="fullName">
+                            <i class="fas fa-user"></i>
+                            Full Name
+                        </label>
+                        <input 
+                            type="text" 
+                            id="fullName" 
+                            name="fullName" 
+                            placeholder="Enter your full name"
+                            required
+                        >
+                        <div class="error-message" id="nameError"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">
+                            <i class="fas fa-envelope"></i>
+                            Email Address
+                        </label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            placeholder="Enter your email"
+                            required
+                        >
+                        <div class="error-message" id="emailError"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">
+                            <i class="fas fa-lock"></i>
+                            Password
+                        </label>
+                        <div class="password-input">
+                            <input 
+                                type="password" 
+                                id="password" 
+                                name="password" 
+                                placeholder="Create a password"
+                                required
+                            >
+                            <button type="button" class="password-toggle" id="passwordToggle">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="error-message" id="passwordError"></div>
+                        <div class="password-strength">
+                            <div class="strength-bar">
+                                <div class="strength-fill" id="strengthFill"></div>
+                            </div>
+                            <span class="strength-text" id="strengthText">Weak</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword">
+                            <i class="fas fa-lock"></i>
+                            Confirm Password
+                        </label>
+                        <div class="password-input">
+                            <input 
+                                type="password" 
+                                id="confirmPassword" 
+                                name="confirmPassword" 
+                                placeholder="Confirm your password"
+                                required
+                            >
+                            <button type="button" class="password-toggle" id="confirmPasswordToggle">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="error-message" id="confirmPasswordError"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="careerInterest">
+                            <i class="fas fa-briefcase"></i>
+                            Career Interest
+                        </label>
+                        <select id="careerInterest" name="careerInterest" required>
+                            <option value="">Select your career interest</option>
+                            <option value="web-development">Web Development</option>
+                            <option value="app-development">App Development</option>
+                            <option value="data-science">Data Science</option>
+                            <option value="ai-ml">AI/ML Engineering</option>
+                            <option value="cybersecurity">Cyber Security</option>
+                            <option value="cloud-computing">Cloud Computing</option>
+                        </select>
+                        <div class="error-message" id="careerError"></div>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms">
+                            I agree to the 
+                            <a href="#" class="link">Terms of Service</a> 
+                            and 
+                            <a href="#" class="link">Privacy Policy</a>
+                        </label>
+                        <div class="error-message" id="termsError"></div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-full btn-loading" id="submitBtn">
+                        <span class="btn-text">Create Account</span>
+                        <div class="btn-spinner"></div>
+                    </button>
+                </form>
+
+                <div class="auth-footer">
+                    <p>Already have an account? <a href="login.html" class="link">Sign In</a></p>
+                </div>
+
+                <!-- Progress Steps -->
+                <div class="progress-steps">
+                    <div class="step active">
+                        <div class="step-number">1</div>
+                        <span>Account</span>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <span>Profile</span>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <span>Roadmap</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Benefits Sidebar -->
+            <div class="auth-sidebar">
+                <div class="sidebar-content">
+                    <h3>Why Join TechFriends?</h3>
+                    <div class="benefits-list">
+                        <div class="benefit-item">
+                            <i class="fas fa-road"></i>
+                            <div>
+                                <h4>Structured Learning</h4>
+                                <p>Step-by-step roadmaps from beginner to advanced</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-tasks"></i>
+                            <div>
+                                <h4>Progress Tracking</h4>
+                                <p>Monitor your journey and celebrate milestones</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <h4>Community Support</h4>
+                                <p>Connect with mentors and fellow learners</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-briefcase"></i>
+                            <div>
+                                <h4>Career Guidance</h4>
+                                <p>Get job-ready with industry-relevant skills</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>Account Created Successfully!</h3>
+            <p>Welcome to TechFriends. Your learning journey starts now.</p>
+            <div class="modal-actions">
+                <button class="btn btn-primary" onclick="redirectToDashboard()">
+                    Go to Dashboard
+                </button>
+                <button class="btn btn-secondary" onclick="redirectToRoadmaps()">
+                    Explore Roadmaps
+                </button>
+            </div>
+        </div>
     </div>
-  </nav>
 
-  <!-- Registration Section -->
-  <section class="py-5">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
-          <!-- Multi-step Registration Form -->
-          <div class="glassy-card p-4 p-md-5 floating-animation">
-            <div class="text-center mb-5">
-              <h1 class="fw-bold text-white">Join <span class="text-primary">TechFriends</span> Community</h1>
-              <p class="text-light mb-0">Start your tech journey with personalized learning paths and expert guidance
-              </p>
-            </div>
-
-            <!-- Step Indicator -->
-            <div class="step-indicator">
-              <div class="step active">1</div>
-              <div class="step-line"></div>
-              <div class="step">2</div>
-              <div class="step-line"></div>
-              <div class="step">3</div>
-            </div>
-
-            <!-- Multi-step Form -->
-            <form class="needs-validation" id="multiStepForm" novalidate>
-              <!-- Step 1: Personal Details -->
-              <div class="form-step active" id="step1">
-                <h3 class="text-white mb-4">Personal Information</h3>
-
-                <div class="row g-3">
-                  <div class="col-md-6">
-                    <div class="form-floating">
-                      <input type="text" class="form-control" id="firstName" placeholder="First Name" required>
-                      <label for="firstName">First Name</label>
-                      <div class="invalid-feedback">Please provide your first name.</div>
-                    </div>
-                  </div>
-
-                  <div class="col-md-6">
-                    <div class="form-floating">
-                      <input type="text" class="form-control" id="lastName" placeholder="Last Name" required>
-                      <label for="lastName">Last Name</label>
-                      <div class="invalid-feedback">Please provide your last name.</div>
-                    </div>
-                  </div>
-
-                  <div class="col-md-6">
-                    <div class="form-floating">
-                      <input type="email" class="form-control" id="email" placeholder="Email" required>
-                      <label for="email">Email Address</label>
-                      <div class="invalid-feedback">Please provide a valid email.</div>
-                    </div>
-                  </div>
-
-                  <div class="col-md-6">
-                    <div class="form-floating">
-                      <input type="tel" class="form-control" id="phone" placeholder="Phone" required>
-                      <label for="phone">Phone Number</label>
-                      <div class="invalid-feedback">Please provide your phone number.</div>
-                    </div>
-                  </div>
-
-                  <div class="col-12">
-                    <div class="form-floating">
-                      <input type="date" class="form-control" id="dob" required>
-                      <label for="dob">Date of Birth</label>
-                      <div class="invalid-feedback">Please select your date of birth.</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="d-flex justify-content-between mt-4">
-                  <div></div> <!-- Empty div for spacing -->
-                  <button type="button" class="btn btn-primary next-step">Next <i
-                      class="bi bi-arrow-right"></i></button>
-                </div>
-              </div>
-
-              <!-- Step 2: Account Setup -->
-              <div class="form-step" id="step2">
-                <h3 class="text-white mb-4">Account Setup</h3>
-
-                <div class="row g-3">
-                  <div class="col-md-6">
-                    <div class="form-floating">
-                      <input type="text" class="form-control" id="username" placeholder="Username" required>
-                      <label for="username">Username</label>
-                      <div class="invalid-feedback">Please choose a username.</div>
-                    </div>
-                  </div>
-
-                  <div class="col-md-6">
-                    <div class="form-floating">
-                      <input type="password" class="form-control" id="password" placeholder="Password" required
-                        onkeyup="checkPasswordStrength(this.value)">
-                      <label for="password">Password</label>
-                      <div class="invalid-feedback">Please create a password.</div>
-                    </div>
-                    <div class="password-strength mt-2" id="passwordStrength"></div>
-                    <small class="text-white-50">Password strength: <span id="strengthText">None</span></small>
-                  </div>
-
-                  <div class="col-md-6">
-                    <div class="form-floating">
-                      <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password"
-                        required>
-                      <label for="confirmPassword">Confirm Password</label>
-                      <div class="invalid-feedback">Passwords do not match.</div>
-                    </div>
-                  </div>
-
-                  <div class="col-md-6">
-                    <div class="form-floating">
-                      <select class="form-select" id="accountType" required>
-                        <option value="" disabled selected>Choose account type</option>
-                        <option value="student">Student</option>
-                        <option value="professional">Working Professional</option>
-                        <option value="mentor">Mentor</option>
-                        <option value="other">Other</option>
-                      </select>
-                      <label for="accountType">Account Type</label>
-                      <div class="invalid-feedback">Please select your account type.</div>
-                    </div>
-                  </div>
-
-                  <div class="col-12">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="newsletter">
-                      <label class="form-check-label text-white" for="newsletter">
-                        Subscribe to our newsletter for updates and tech insights
-                      </label>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="d-flex justify-content-between mt-4">
-                  <button type="button" class="btn btn-outline-light prev-step"><i class="bi bi-arrow-left"></i>
-                    Previous</button>
-                  <button type="button" class="btn btn-primary next-step">Next <i
-                      class="bi bi-arrow-right"></i></button>
-                </div>
-              </div>
-
-              <!-- Step 3: Interests & Goals -->
-              <div class="form-step" id="step3">
-                <h3 class="text-white mb-4">Interests & Goals</h3>
-
-                <div class="row g-3">
-                  <div class="col-md-6">
-                    <div class="form-floating">
-                      <select class="form-select" id="interest" required>
-                        <option value="" disabled selected>Choose your interest</option>
-                        <option value="web">Web Development</option>
-                        <option value="app">App Development</option>
-                        <option value="ai">AI & Data Science</option>
-                        <option value="cyber">Cyber Security</option>
-                        <option value="cloud">Cloud Computing</option>
-                        <option value="game">Game Development</option>
-                        <option value="uiux">UI/UX Design</option>
-                      </select>
-                      <label for="interest">Primary Interest</label>
-                      <div class="invalid-feedback">Please select your interest.</div>
-                    </div>
-                  </div>
-
-                  <div class="col-md-6">
-                    <div class="form-floating">
-                      <select class="form-select" id="experience" required>
-                        <option value="" disabled selected>Select experience level</option>
-                        <option value="beginner">Beginner</option>
-                        <option value="intermediate">Intermediate</option>
-                        <option value="advanced">Advanced</option>
-                      </select>
-                      <label for="experience">Experience Level</label>
-                      <div class="invalid-feedback">Please select your experience level.</div>
-                    </div>
-                  </div>
-
-                  <div class="col-12">
-                    <div class="form-floating">
-                      <textarea class="form-control" placeholder="Leave a message here" id="goals" style="height: 120px"
-                        required></textarea>
-                      <label for="goals">Your Learning Goals</label>
-                      <div class="invalid-feedback">Please tell us about your learning goals.</div>
-                    </div>
-                  </div>
-
-                  <div class="col-12">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="terms" required>
-                      <label class="form-check-label text-white" for="terms">
-                        I agree to the <a href="#" class="text-primary">Terms and Conditions</a> and <a href="#"
-                          class="text-primary">Privacy Policy</a>
-                      </label>
-                      <div class="invalid-feedback">You must agree before submitting.</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="d-flex justify-content-between mt-4">
-                  <button type="button" class="btn btn-outline-light prev-step"><i class="bi bi-arrow-left"></i>
-                    Previous</button>
-                  <button type="submit" class="btn btn-success pulse-animation"><i class="bi bi-person-plus-fill"></i>
-                    Complete Registration</button>
-                </div>
-              </div>
-            </form>
-
-            <!-- Social Login -->
-            <div class="text-center mt-4">
-              <p class="text-white-50 mb-3">Or sign up with</p>
-              <div class="social-login">
-                <a href="#" class="social-btn"><i class="bi bi-google"></i></a>
-                <a href="#" class="social-btn"><i class="bi bi-github"></i></a>
-                <a href="#" class="social-btn"><i class="bi bi-linkedin"></i></a>
-                <a href="#" class="social-btn"><i class="bi bi-facebook"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Features Section -->
-      <div class="row mt-5">
-        <div class="col-12 text-center mb-4">
-          <h2 class="text-white">Why Join TechFriends?</h2>
-          <p class="text-light">Discover the benefits of being part of our tech community</p>
-        </div>
-
-        <div class="col-md-4 mb-4">
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="bi bi-person-check text-white"></i>
-            </div>
-            <h5 class="text-white">Personalized Roadmaps</h5>
-            <p class="text-white-50">Get customized learning paths based on your goals, skills, and interests.</p>
-          </div>
-        </div>
-
-        <div class="col-md-4 mb-4">
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="bi bi-people text-white"></i>
-            </div>
-            <h5 class="text-white">Community Support</h5>
-            <p class="text-white-50">Connect with mentors and peers for guidance, code reviews, and collaboration.</p>
-          </div>
-        </div>
-
-        <div class="col-md-4 mb-4">
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="bi bi-briefcase text-white"></i>
-            </div>
-            <h5 class="text-white">Career Opportunities</h5>
-            <p class="text-white-50">Access job boards, internship opportunities, and career guidance.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Login Modal -->
-  <div class="modal fade" id="signinModal" tabindex="-1" aria-labelledby="signinModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content glassy-card border-0">
-        <div class="modal-header border-0">
-          <h1 class="modal-title fs-5 text-white" id="signinModalLabel">Login to TechFriends</h1>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="mb-3">
-              <label for="loginEmail" class="form-label text-white">Email address</label>
-              <input type="email" class="form-control" id="loginEmail" aria-describedby="emailHelp">
-            </div>
-            <div class="mb-3">
-              <label for="loginPassword" class="form-label text-white">Password</label>
-              <input type="password" class="form-control" id="loginPassword">
-            </div>
-            <div class="mb-3 form-check">
-              <input type="checkbox" class="form-check-input" id="rememberMe">
-              <label class="form-check-label text-white" for="rememberMe">Remember me</label>
-            </div>
-            <div class="mb-3 text-center">
-              <a href="#" class="text-primary">Forgot password?</a>
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer border-0">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <a href="index0.html" class="btn btn-primary">Login</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Signup Modal -->
-  <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content glassy-card border-0">
-        <div class="modal-header border-0">
-          <h1 class="modal-title fs-5 text-white" id="signupModalLabel">Create an account</h1>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="mb-3">
-              <label class="form-label text-white">Name</label>
-              <input type="text" class="form-control" placeholder="Your name">
-            </div>
-            <div class="mb-3">
-              <label for="modalEmail" class="form-label text-white">Email address</label>
-              <input type="email" class="form-control" id="modalEmail" aria-describedby="emailHelp">
-            </div>
-            <div class="mb-3">
-              <label for="modalPassword" class="form-label text-white">Password</label>
-              <input type="password" class="form-control" id="modalPassword">
-            </div>
-            <div class="mb-3 form-check">
-              <input type="checkbox" class="form-check-input" id="modalCheck">
-              <label class="form-check-label text-white" for="modalCheck">I agree to the terms and conditions</label>
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer border-0">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Create account</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <footer class="bg-dark text-light text-center py-4 mt-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4 mb-3">
-          <h5>TechFriends</h5>
-          <p>Empowering students to build successful tech careers through structured learning paths and community
-            support.</p>
-        </div>
-        <div class="col-md-4 mb-3">
-          <h5>Quick Links</h5>
-          <ul class="list-unstyled">
-            <li><a href="index.html" class="text-light">Home</a></li>
-            <li><a href="about.html" class="text-light">About Us</a></li>
-            <li><a href="contact.html" class="text-light">Contact</a></li>
-            <li><a href="#" class="text-light">Learning Paths</a></li>
-          </ul>
-        </div>
-        <div class="col-md-4 mb-3">
-          <h5>Connect With Us</h5>
-          <div class="d-flex justify-content-center gap-3">
-            <a href="#" class="text-light"><i class="bi bi-facebook fs-4"></i></a>
-            <a href="#" class="text-light"><i class="bi bi-twitter fs-4"></i></a>
-            <a href="#" class="text-light"><i class="bi bi-linkedin fs-4"></i></a>
-            <a href="#" class="text-light"><i class="bi bi-instagram fs-4"></i></a>
-          </div>
-        </div>
-      </div>
-      <hr>
-      <p>&copy; 2025 TechFriends | Designed by Lalit & Team | All Rights Reserved</p>
-      <a href="privacy.html" class="text-light mx-2">Privacy Policy</a> |
-      <a href="termservices.html" class="text-light mx-2">Terms of Service</a>
-    </div>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-    crossorigin="anonymous"></script>
-
-  <script>
-    // Multi-step form functionality
-    document.addEventListener('DOMContentLoaded', function () {
-      const formSteps = document.querySelectorAll('.form-step');
-      const stepIndicators = document.querySelectorAll('.step');
-      const nextButtons = document.querySelectorAll('.next-step');
-      const prevButtons = document.querySelectorAll('.prev-step');
-      let currentStep = 0;
-
-      // Show current step
-      function showStep(stepIndex) {
-        formSteps.forEach((step, index) => {
-          step.classList.toggle('active', index === stepIndex);
-        });
-
-        stepIndicators.forEach((indicator, index) => {
-          indicator.classList.toggle('active', index <= stepIndex);
-        });
-
-        currentStep = stepIndex;
-      }
-
-      // Next button click
-      nextButtons.forEach(button => {
-        button.addEventListener('click', function () {
-          const currentFormStep = formSteps[currentStep];
-          const inputs = currentFormStep.querySelectorAll('input, select, textarea');
-          let isValid = true;
-
-          // Validate current step
-          inputs.forEach(input => {
-            if (!input.checkValidity()) {
-              isValid = false;
-              input.classList.add('is-invalid');
-            }
-          });
-
-          if (isValid) {
-            showStep(currentStep + 1);
-          }
-        });
-      });
-
-      // Previous button click
-      prevButtons.forEach(button => {
-        button.addEventListener('click', function () {
-          showStep(currentStep - 1);
-        });
-      });
-
-      // Form submission
-      document.getElementById('multiStepForm').addEventListener('submit', function (event) {
-        event.preventDefault();
-
-        // Show success message
-        alert('🎉 Registration successful! Welcome to TechFriends.');
-        window.location.href = "index.html";
-      });
-    });
-
-    // Password strength checker
-    function checkPasswordStrength(password) {
-      const strengthBar = document.getElementById('passwordStrength');
-      const strengthText = document.getElementById('strengthText');
-
-      // Reset
-      strengthBar.className = 'password-strength';
-      strengthBar.style.width = '0%';
-
-      if (password.length === 0) {
-        strengthText.textContent = 'None';
-        return;
-      }
-
-      // Calculate strength
-      let strength = 0;
-
-      // Length check
-      if (password.length >= 8) strength += 1;
-
-      // Contains lowercase
-      if (/[a-z]/.test(password)) strength += 1;
-
-      // Contains uppercase
-      if (/[A-Z]/.test(password)) strength += 1;
-
-      // Contains numbers
-      if (/[0-9]/.test(password)) strength += 1;
-
-      // Contains special characters
-      if (/[^A-Za-z0-9]/.test(password)) strength += 1;
-
-      // Update UI based on strength
-      if (strength <= 1) {
-        strengthBar.className = 'password-strength strength-weak';
-        strengthText.textContent = 'Weak';
-      } else if (strength <= 3) {
-        strengthBar.className = 'password-strength strength-medium';
-        strengthText.textContent = 'Medium';
-      } else if (strength <= 4) {
-        strengthBar.className = 'password-strength strength-strong';
-        strengthText.textContent = 'Strong';
-      } else {
-        strengthBar.className = 'password-strength strength-very-strong';
-        strengthText.textContent = 'Very Strong';
-      }
-    }
-
-    // Form validation
-    (() => {
-      'use strict';
-      const forms = document.querySelectorAll('.needs-validation');
-      Array.from(forms).forEach(form => {
-        form.addEventListener('submit', event => {
-          if (!form.checkValidity()) {
-            event.preventDefault();
-            event.stopPropagation();
-          }
-          form.classList.add('was-validated');
-        }, false);
-      });
-    })();
-  </script>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/auth.js"></script>
 </body>
-
 </html>

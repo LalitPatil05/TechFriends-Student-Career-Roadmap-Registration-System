@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - TechFriends</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/settings.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>TechFriends</span>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="roadmap.html" class="nav-link">Roadmaps</a>
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+                <a href="profile.html" class="nav-link">Profile</a>
+                <a href="settings.html" class="nav-link active">Settings</a>
+                <div class="nav-actions">
+                    <button class="search-btn" id="searchToggle">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <div class="user-menu">
+                        <button class="user-btn" id="userToggle">
+                            <img src="https://ui-avatars.com/api/?name=Demo+User&background=6366f1&color=fff" alt="User" class="user-avatar">
+                            <span class="user-name">Demo User</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="user-dropdown" id="userDropdown">
+                            <div class="user-info">
+                                <img src="https://ui-avatars.com/api/?name=Demo+User&background=6366f1&color=fff" alt="User" class="user-avatar">
+                                <div class="user-details">
+                                    <strong>Demo User</strong>
+                                    <span>student@demo.com</span>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <a href="profile.html" class="dropdown-item">
+                                <i class="fas fa-user-edit"></i>
+                                Edit Profile
+                            </a>
+                            <a href="settings.html" class="dropdown-item">
+                                <i class="fas fa-cog"></i>
+                                Settings
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" class="dropdown-item logout-btn">
+                                <i class="fas fa-sign-out-alt"></i>
+                                Logout
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Settings Container -->
+    <div class="settings-container">
+        <!-- Settings Sidebar -->
+        <aside class="settings-sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-header">
+                    <h2>Settings</h2>
+                    <p>Manage your account preferences</p>
+                </div>
+
+                <nav class="settings-nav">
+                    <a href="#account" class="nav-item active" data-tab="account">
+                        <i class="fas fa-user-cog"></i>
+                        <span>Account Settings</span>
+                    </a>
+                    <a href="#notifications" class="nav-item" data-tab="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span>Notifications</span>
+                    </a>
+                    <a href="#privacy" class="nav-item" data-tab="privacy">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Privacy & Security</span>
+                    </a>
+                    <a href="#appearance" class="nav-item" data-tab="appearance">
+                        <i class="fas fa-palette"></i>
+                        <span>Appearance</span>
+                    </a>
+                    <a href="#learning" class="nav-item" data-tab="learning">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Learning Preferences</span>
+                    </a>
+                    <a href="#billing" class="nav-item" data-tab="billing">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Billing & Plans</span>
+                    </a>
+                    <a href="#integrations" class="nav-item" data-tab="integrations">
+                        <i class="fas fa-puzzle-piece"></i>
+                        <span>Integrations</span>
+                    </a>
+                    <a href="#advanced" class="nav-item" data-tab="advanced">
+                        <i class="fas fa-sliders-h"></i>
+                        <span>Advanced</span>
+                    </a>
+                </nav>
+
+                <div class="sidebar-footer">
+                    <div class="storage-info">
+                        <div class="storage-header">
+                            <span>Storage Usage</span>
+                            <span>1.2GB / 5GB</span>
+                        </div>
+                        <div class="storage-bar">
+                            <div class="storage-fill" style="width: 24%"></div>
+                        </div>
+                        <p>You're using 24% of your available storage</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Settings Main Content -->
+        <main class="settings-main">
+            <!-- Account Settings Tab -->
+            <div class="tab-content active" id="account">
+                <div class="tab-header">
+                    <div class="header-content">
+                        <h2>Account Settings</h2>
+                        <p>Manage your account information and preferences</p>
+                    </div>
+                    <div class="header-actions">
+                        <button class="btn btn-outline" onclick="exportData()">
+                            <i class="fas fa-download"></i>
+                            Export Data
+                        </button>
+                    </div>
+                </div>
+
+                <div class="settings-sections">
+                    <!-- Basic Information -->
+                    <div class="settings-section">
+                        <div class="section-header">
+                            <h3>Basic Information</h3>
+                            <p>Your basic profile information</p>
+                        </div>
+                        <div class="section-content">
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <label>Full Name</label>
+                                    <div class="info-value">Demo User</div>
+                                </div>
+                                <div class="info-item">
+                                    <label>Email Address</label>
+                                    <div class="info-value">student@demo.com</div>
+                                </div>
+                                <div class="info-item">
+                                    <label>Account Type</label>
+                                    <div class="info-value">
+                                        <span class="badge badge-primary">Student</span>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <label>Member Since</label>
+                                    <div class="info-value">January 15, 2024</div>
+                                </div>
+                            </div>
+                            <div class="section-actions">
+                                <button class="btn btn-primary" onclick="openEditModal('basic')">
+                                    <i class="fas fa-edit"></i>
+                                    Edit Information
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Login & Security -->
+                    <div class="settings-section">
+                        <div class="section-header">
+                            <h3>Login & Security</h3>
+                            <p>Manage your account security settings</p>
+                        </div>
+                        <div class="section-content">
+                            <div class="security-items">
+                                <div class="security-item">
+                                    <div class="security-info">
+                                        <i class="fas fa-key"></i>
+                                        <div>
+                                            <h4>Password</h4>
+                                            <p>Last changed 2 weeks ago</p>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-outline" onclick="openPasswordModal()">
+                                        Change Password
+                                    </button>
+                                </div>
+                                <div class="security-item">
+                                    <div class="security-info">
+                                        <i class="fas fa-mobile-alt"></i>
+                                        <div>
+                                            <h4>Two-Factor Authentication</h4>
+                                            <p>Add an extra layer of security</p>
+                                        </div>
+                                    </div>
+                                    <div class="security-status">
+                                        <span class="status-badge disabled">Disabled</span>
+                                        <button class="btn btn-primary" onclick="enable2FA()">
+                                            Enable 2FA
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="security-item">
+                                    <div class="security-info">
+                                        <i class="fas fa-shield-alt"></i>
+                                        <div>
+                                            <h4>Login Activity</h4>
+                                            <p>Review recent account activity</p>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-outline" onclick="viewLoginActivity()">
+                                        View Activity
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Account Actions -->
+                    <div class="settings-section danger-zone">
+                        <div class="section-header">
+                            <h3>Account Actions</h3>
+                            <p>Dangerous actions - proceed with caution</p>
+                        </div>
+                        <div class="section-content">
+                            <div class="action-items">
+                                <div class="action-item">
+                                    <div class="action-info">
+                                        <h4>Deactivate Account</h4>
+                                        <p>Temporarily disable your account. You can reactivate anytime.</p>
+                                    </div>
+                                    <button class="btn btn-warning" onclick="deactivateAccount()">
+                                        Deactivate
+                                    </button>
+                                </div>
+                                <div class="action-item">
+                                    <div class="action-info">
+                                        <h4>Delete Account</h4>
+                                        <p>Permanently delete your account and all data. This cannot be undone.</p>
+                                    </div>
+                                    <button class="btn btn-danger" onclick="deleteAccount()">
+                                        Delete Account
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Notifications Tab -->
+            <div class="tab-content" id="notifications">
+                <div class="tab-header">
+                    <div class="header-content">
+                        <h2>Notification Settings</h2>
+                        <p>Control how and when you receive notifications</p>
+                    </div>
+                    <div class="header-actions">
+                        <button class="btn btn-outline" onclick="enableAllNotifications()">
+                            Enable All
+                        </button>
+                        <button class="btn btn-outline" onclick="disableAllNotifications()">
+                            Disable All
+                        </button>
+                    </div>
+                </div>
+
+                <div class="settings-sections">
+                    <!-- Email Notifications -->
+                    <div class="settings-section">
+                        <div class="section-header">
+                            <h3>Email Notifications</h3>
+                            <p>Manage email notifications from TechFriends</p>
+                        </div>
+                        <div class="section-content">
+                            <div class="toggle-grid">
+                                <div class="toggle-item">
+                                    <div class="toggle-info">
+                                        <h4>Course Updates</h4>
+                                        <p>Get notified about new content in your enrolled courses</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="toggle-item">
+                                    <div class="toggle-info">
+                                        <h4>Learning Reminders</h4>
+                                        <p>Receive reminders to continue your learning journey</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="toggle-item">
+                                    <div class="toggle-info">
+                                        <h4>Weekly Progress Reports</h4>
+                                        <p>Get weekly summaries of your learning progress</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="toggle-item">
+                                    <div class="toggle-info">
+                                        <h4>Community Updates</h4>
+                                        <p>Notifications about community events and discussions</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Push Notifications -->
+                    <div class="settings-section">
+                        <div class="section-header">
+                            <h3>Push Notifications</h3>
+                            <p>Browser and mobile push notifications</p>
+                        </div>
+                        <div class="section-content">
+                            <div class="toggle-grid">
+                                <div class="toggle-item">
+                                    <div class="toggle-info">
+                                        <h4>Browser Notifications</h4>
+                                        <p>Receive notifications in your browser</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="toggle-item">
+                                    <div class="toggle-info">
+                                        <h4>Assignment Deadlines</h4>
+                                        <p>Get reminded about upcoming deadlines</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="toggle-item">
+                                    <div class="toggle-info">
+                                        <h4>Live Session Alerts</h4>
+                                        <p>Notifications for upcoming live sessions</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Notification Preferences -->
+                    <div class="settings-section">
+                        <div class="section-header">
+                            <h3>Notification Preferences</h3>
+                            <p>Customize how you receive notifications</p>
+                        </div>
+                        <div class="section-content">
+                            <div class="preference-grid">
+                                <div class="preference-item">
+                                    <label>Notification Frequency</label>
+                                    <select class="form-select">
+                                        <option value="instant">Instant</option>
+                                        <option value="hourly" selected>Hourly Digest</option>
+                                        <option value="daily">Daily Digest</option>
+                                        <option value="weekly">Weekly Digest</option>
+                                    </select>
+                                </div>
+                                <div class="preference-item">
+                                    <label>Quiet Hours</label>
+                                    <select class="form-select">
+                                        <option value="none">No Quiet Hours</option>
+                                        <option value="10pm-7am">10 PM - 7 AM</option>
+                                        <option value="11pm-8am">11 PM - 8 AM</option>
+                                        <option value="custom">Custom Hours</option>
+                                    </select>
+                                </div>
+                                <div class="preference-item">
+                                    <label>Sound Effects</label>
+                                    <select class="form-select">
+                                        <option value="all">All Sounds</option>
+                                        <option value="important" selected>Important Only</option>
+                                        <option value="none">No Sounds</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Appearance Tab -->
+            <div class="tab-content" id="appearance">
+                <div class="tab-header">
+                    <div class="header-content">
+                        <h2>Appearance Settings</h2>
+                        <p>Customize the look and feel of your learning environment</p>
+                    </div>
+                </div>
+
+                <div class="settings-sections">
+                    <!-- Theme Settings -->
+                    <div class="settings-section">
+                        <div class="section-header">
+                            <h3>Theme & Colors</h3>
+                            <p>Choose your preferred theme and color scheme</p>
+                        </div>
+                        <div class="section-content">
+                            <div class="theme-options">
+                                <div class="theme-preview active" data-theme="light">
+                                    <div class="theme-demo">
+                                        <div class="demo-header"></div>
+                                        <div class="demo-sidebar"></div>
+                                        <div class="demo-content"></div>
+                                    </div>
+                                    <div class="theme-info">
+                                        <h4>Light Theme</h4>
+                                        <p>Clean and bright interface</p>
+                                    </div>
+                                    <div class="theme-check">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                </div>
+                                <div class="theme-preview" data-theme="dark">
+                                    <div class="theme-demo dark">
+                                        <div class="demo-header"></div>
+                                        <div class="demo-sidebar"></div>
+                                        <div class="demo-content"></div>
+                                    </div>
+                                    <div class="theme-info">
+                                        <h4>Dark Theme</h4>
+                                        <p>Easy on the eyes in low light</p>
+                                    </div>
+                                    <div class="theme-check">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                </div>
+                                <div class="theme-preview" data-theme="auto">
+                                    <div class="theme-demo auto">
+                                        <div class="demo-header"></div>
+                                        <div class="demo-sidebar"></div>
+                                        <div class="demo-content"></div>
+                                    </div>
+                                    <div class="theme-info">
+                                        <h4>Auto</h4>
+                                        <p>Follows system preference</p>
+                                    </div>
+                                    <div class="theme-check">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Layout Settings -->
+                    <div class="settings-section">
+                        <div class="section-header">
+                            <h3>Layout & Display</h3>
+                            <p>Customize the layout and display options</p>
+                        </div>
+                        <div class="section-content">
+                            <div class="layout-options">
+                                <div class="layout-item">
+                                    <div class="layout-info">
+                                        <h4>Sidebar Position</h4>
+                                        <p>Choose where the navigation sidebar appears</p>
+                                    </div>
+                                    <select class="form-select">
+                                        <option value="left">Left</option>
+                                        <option value="right">Right</option>
+                                        <option value="top">Top</option>
+                                    </select>
+                                </div>
+                                <div class="layout-item">
+                                    <div class="layout-info">
+                                        <h4>Content Density</h4>
+                                        <p>Adjust the spacing and size of content</p>
+                                    </div>
+                                    <select class="form-select">
+                                        <option value="compact">Compact</option>
+                                        <option value="comfortable" selected>Comfortable</option>
+                                        <option value="spacious">Spacious</option>
+                                    </select>
+                                </div>
+                                <div class="layout-item">
+                                    <div class="layout-info">
+                                        <h4>Font Size</h4>
+                                        <p>Adjust the base font size</p>
+                                    </div>
+                                    <select class="form-select">
+                                        <option value="small">Small</option>
+                                        <option value="medium" selected>Medium</option>
+                                        <option value="large">Large</option>
+                                        <option value="xlarge">Extra Large</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Accessibility -->
+                    <div class="settings-section">
+                        <div class="section-header">
+                            <h3>Accessibility</h3>
+                            <p>Settings to make the platform more accessible</p>
+                        </div>
+                        <div class="section-content">
+                            <div class="accessibility-options">
+                                <div class="toggle-item">
+                                    <div class="toggle-info">
+                                        <h4>High Contrast Mode</h4>
+                                        <p>Increase color contrast for better visibility</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="toggle-item">
+                                    <div class="toggle-info">
+                                        <h4>Reduced Motion</h4>
+                                        <p>Minimize animations and transitions</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="toggle-item">
+                                    <div class="toggle-info">
+                                        <h4>Larger Text</h4>
+                                        <p>Increase text size across the platform</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Learning Preferences Tab -->
+            <div class="tab-content" id="learning">
+                <div class="tab-header">
+                    <div class="header-content">
+                        <h2>Learning Preferences</h2>
+                        <p>Customize your learning experience</p>
+                    </div>
+                </div>
+
+                <div class="settings-sections">
+                    <!-- Learning Style -->
+                    <div class="settings-section">
+                        <div class="section-header">
+                            <h3>Learning Style</h3>
+                            <p>Tell us how you prefer to learn</p>
+                        </div>
+                        <div class="section-content">
+                            <div class="learning-style-options">
+                                <div class="style-option">
+                                    <input type="radio" name="learning-style" id="visual" checked>
+                                    <label for="visual">
+                                        <i class="fas fa-eye"></i>
+                                        <h4>Visual Learner</h4>
+                                        <p>Prefer diagrams, videos, and demonstrations</p>
+                                    </label>
+                                </div>
+                                <div class="style-option">
+                                    <input type="radio" name="learning-style" id="auditory">
+                                    <label for="auditory">
+                                        <i class="fas fa-headphones"></i>
+                                        <h4>Auditory Learner</h4>
+                                        <p>Learn better through listening and discussions</p>
+                                    </label>
+                                </div>
+                                <div class="style-option">
+                                    <input type="radio" name="learning-style" id="kinesthetic">
+                                    <label for="kinesthetic">
+                                        <i class="fas fa-hands"></i>
+                                        <h4>Kinesthetic Learner</h4>
+                                        <p>Learn by doing and hands-on practice</p>
+                                    </label>
+                                </div>
+                                <div class="style-option">
+                                    <input type="radio" name="learning-style" id="reading">
+                                    <label for="reading">
+                                        <i class="fas fa-book"></i>
+                                        <h4>Reading/Writing</h4>
+                                        <p>Prefer reading materials and taking notes</p>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Study Preferences -->
+                    <div class="settings-section">
+                        <div class="section-header">
+                            <h3>Study Preferences</h3>
+                            <p>Customize your study environment</p>
+                        </div>
+                        <div class="section-content">
+                            <div class="preference-grid">
+                                <div class="preference-item">
+                                    <label>Daily Study Goal</label>
+                                    <select class="form-select">
+                                        <option value="30">30 minutes</option>
+                                        <option value="60" selected>1 hour</option>
+                                        <option value="90">1.5 hours</option>
+                                        <option value="120">2 hours</option>
+                                        <option value="180">3 hours</option>
+                                    </select>
+                                </div>
+                                <div class="preference-item">
+                                    <label>Preferred Study Time</label>
+                                    <select class="form-select">
+                                        <option value="morning">Morning (6 AM - 12 PM)</option>
+                                        <option value="afternoon" selected>Afternoon (12 PM - 6 PM)</option>
+                                        <option value="evening">Evening (6 PM - 12 AM)</option>
+                                        <option value="night">Night (12 AM - 6 AM)</option>
+                                    </select>
+                                </div>
+                                <div class="preference-item">
+                                    <label>Weekly Study Days</label>
+                                    <select class="form-select">
+                                        <option value="5">5 days/week</option>
+                                        <option value="6">6 days/week</option>
+                                        <option value="7" selected>7 days/week</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Content Preferences -->
+                    <div class="settings-section">
+                        <div class="section-header">
+                            <h3>Content Preferences</h3>
+                            <p>Customize the type of content you see</p>
+                        </div>
+                        <div class="section-content">
+                            <div class="toggle-grid">
+                                <div class="toggle-item">
+                                    <div class="toggle-info">
+                                        <h4>Video Content</h4>
+                                        <p>Show video-based learning materials</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="toggle-item">
+                                    <div class="toggle-info">
+                                        <h4>Interactive Exercises</h4>
+                                        <p>Include hands-on coding exercises</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="toggle-item">
+                                    <div class="toggle-info">
+                                        <h4>Reading Materials</h4>
+                                        <p>Show articles and documentation</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="toggle-item">
+                                    <div class="toggle-info">
+                                        <h4>Community Content</h4>
+                                        <p>Show posts and discussions from community</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add other tabs (Privacy, Billing, Integrations, Advanced) with similar structure -->
+        </main>
+    </div>
+
+    <!-- Password Modal -->
+    <div id="passwordModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Change Password</h3>
+                <button class="modal-close" onclick="closePasswordModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="password-form" id="passwordForm">
+                    <div class="form-group">
+                        <label for="currentPassword">Current Password</label>
+                        <input type="password" id="currentPassword" name="currentPassword" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="newPassword">New Password</label>
+                        <input type="password" id="newPassword" name="newPassword" required>
+                        <div class="password-strength">
+                            <div class="strength-bar">
+                                <div class="strength-fill" id="passwordStrength"></div>
+                            </div>
+                            <span class="strength-text" id="passwordStrengthText">Weak</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm New Password</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" required>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" onclick="closePasswordModal()">
+                            Cancel
+                        </button>
+                        <button type="submit" class="btn btn-primary">
+                            Update Password
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2FA Setup Modal -->
+    <div id="twoFAModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Setup Two-Factor Authentication</h3>
+                <button class="modal-close" onclick="close2FAModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="2fa-setup">
+                    <div class="setup-step active" id="step1">
+                        <h4>Step 1: Scan QR Code</h4>
+                        <p>Scan this QR code with your authenticator app</p>
+                        <div class="qr-code">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=TechFriends-2FA-Demo" alt="QR Code">
+                        </div>
+                        <button class="btn btn-primary" onclick="next2FAStep()">
+                            Next
+                        </button>
+                    </div>
+                    <div class="setup-step" id="step2">
+                        <h4>Step 2: Enter Verification Code</h4>
+                        <p>Enter the 6-digit code from your authenticator app</p>
+                        <div class="verification-input">
+                            <input type="text" maxlength="6" placeholder="000000" class="code-input">
+                        </div>
+                        <div class="setup-actions">
+                            <button class="btn btn-secondary" onclick="prev2FAStep()">
+                                Back
+                            </button>
+                            <button class="btn btn-primary" onclick="verify2FACode()">
+                                Verify & Enable
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Account Modal -->
+    <div id="deleteAccountModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Delete Account</h3>
+                <button class="modal-close" onclick="closeDeleteModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="delete-warning">
+                    <div class="warning-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h4>Are you absolutely sure?</h4>
+                    <p>This action cannot be undone. This will permanently delete your account and remove all your data from our servers.</p>
+                    
+                    <div class="confirmation-check">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="confirmDelete">
+                            <span class="checkmark"></span>
+                            I understand that this action is irreversible
+                        </label>
+                    </div>
+                    
+                    <div class="delete-actions">
+                        <button class="btn btn-secondary" onclick="closeDeleteModal()">
+                            Cancel
+                        </button>
+                        <button class="btn btn-danger" id="confirmDeleteBtn" disabled onclick="confirmDeleteAccount()">
+                            Delete Account
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/script.js"></script>
+    <script src="scripts/settings.js"></script>
+</body>
+</html>

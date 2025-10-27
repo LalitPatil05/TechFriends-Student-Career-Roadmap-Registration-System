@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - TechFriends</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/dashboard.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>TechFriends</span>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="roadmap.html" class="nav-link">Roadmaps</a>
+                <a href="dashboard.html" class="nav-link active">Dashboard</a>
+                <div class="nav-actions">
+                    <button class="search-btn" id="searchToggle">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <div class="user-menu">
+                        <button class="user-btn" id="userToggle">
+                            <img src="https://ui-avatars.com/api/?name=Demo+User&background=6366f1&color=fff" alt="User" class="user-avatar">
+                            <span class="user-name">Demo User</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="user-dropdown" id="userDropdown">
+                            <div class="user-info">
+                                <img src="https://ui-avatars.com/api/?name=Demo+User&background=6366f1&color=fff" alt="User" class="user-avatar">
+                                <div class="user-details">
+                                    <strong>Demo User</strong>
+                                    <span>student@demo.com</span>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <a href="profile.html" class="dropdown-item">
+                                <i class="fas fa-user-edit"></i>
+                                Edit Profile
+                            </a>
+                            <a href="settings.html" class="dropdown-item">
+                                <i class="fas fa-cog"></i>
+                                Settings
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" class="dropdown-item logout-btn">
+                                <i class="fas fa-sign-out-alt"></i>
+                                Logout
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Container -->
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-content">
+                <div class="user-widget">
+                    <div class="user-avatar-large">
+                        <img src="https://ui-avatars.com/api/?name=Demo+User&background=6366f1&color=fff" alt="User">
+                    </div>
+                    <div class="user-info">
+                        <h3>Demo User</h3>
+                        <p>Web Development Student</p>
+                        <div class="user-stats">
+                            <div class="stat">
+                                <strong>65%</strong>
+                                <span>Progress</span>
+                            </div>
+                            <div class="stat">
+                                <strong>12</strong>
+                                <span>Courses</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <nav class="sidebar-nav">
+                    <a href="dashboard.html" class="nav-item active">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="my-courses.html" class="nav-item">
+                        <i class="fas fa-book-open"></i>
+                        <span>My Courses</span>
+                        <span class="nav-badge">5</span>
+                    </a>
+                    <a href="progress.html" class="nav-item">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Progress</span>
+                    </a>
+                    <a href="achievements.html" class="nav-item">
+                        <i class="fas fa-trophy"></i>
+                        <span>Achievements</span>
+                        <span class="nav-badge">8</span>
+                    </a>
+                    <a href="resources.html" class="nav-item">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Resources</span>
+                    </a>
+                    <a href="community.html" class="nav-item">
+                        <i class="fas fa-users"></i>
+                        <span>Community</span>
+                    </a>
+                    <div class="nav-divider"></div>
+                    <a href="settings.html" class="nav-item">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </a>
+                    <a href="help.html" class="nav-item">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Help & Support</span>
+                    </a>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Welcome Section -->
+            <section class="welcome-section">
+                <div class="welcome-content">
+                    <div class="welcome-text">
+                        <h1>Welcome back, Demo! 👋</h1>
+                        <p>Continue your learning journey where you left off. You're doing great!</p>
+                    </div>
+                    <div class="welcome-actions">
+                        <button class="btn btn-primary">
+                            <i class="fas fa-plus"></i>
+                            New Roadmap
+                        </button>
+                        <button class="btn btn-secondary">
+                            <i class="fas fa-bullseye"></i>
+                            Set Goals
+                        </button>
+                    </div>
+                </div>
+                <div class="welcome-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>12h 30m</h3>
+                            <span>Learning Time</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>24</h3>
+                            <span>Completed Lessons</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>7</h3>
+                            <span>Day Streak</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Progress Overview -->
+            <section class="progress-section">
+                <div class="section-header">
+                    <h2>Your Learning Progress</h2>
+                    <a href="progress.html" class="view-all">View Detailed Report</a>
+                </div>
+                <div class="progress-grid">
+                    <div class="progress-card main-progress">
+                        <div class="progress-header">
+                            <h3>Overall Progress</h3>
+                            <span class="progress-percent">65%</span>
+                        </div>
+                        <div class="progress-bar large">
+                            <div class="progress-fill" style="width: 65%"></div>
+                        </div>
+                        <div class="progress-stats">
+                            <div class="stat">
+                                <span>Completed</span>
+                                <strong>13/20</strong>
+                            </div>
+                            <div class="stat">
+                                <span>Current</span>
+                                <strong>Web Dev</strong>
+                            </div>
+                            <div class="stat">
+                                <span>Next Goal</span>
+                                <strong>75%</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="progress-card">
+                        <div class="progress-header">
+                            <h4>Web Development</h4>
+                            <span class="progress-percent">75%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 75%"></div>
+                        </div>
+                        <div class="progress-meta">
+                            <span>12/16 topics</span>
+                            <button class="btn-continue">Continue</button>
+                        </div>
+                    </div>
+
+                    <div class="progress-card">
+                        <div class="progress-header">
+                            <h4>JavaScript</h4>
+                            <span class="progress-percent">40%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 40%"></div>
+                        </div>
+                        <div class="progress-meta">
+                            <span>6/15 topics</span>
+                            <button class="btn-continue">Continue</button>
+                        </div>
+                    </div>
+
+                    <div class="progress-card">
+                        <div class="progress-header">
+                            <h4>React</h4>
+                            <span class="progress-percent">20%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 20%"></div>
+                        </div>
+                        <div class="progress-meta">
+                            <span>2/10 topics</span>
+                            <button class="btn-continue">Start</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Current Courses -->
+            <section class="courses-section">
+                <div class="section-header">
+                    <h2>Current Learning Paths</h2>
+                    <a href="my-courses.html" class="view-all">View All Courses</a>
+                </div>
+                <div class="courses-grid">
+                    <div class="course-card featured">
+                        <div class="course-header">
+                            <div class="course-icon">
+                                <i class="fab fa-react"></i>
+                            </div>
+                            <div class="course-info">
+                                <h3>Frontend Development</h3>
+                                <p>Modern React, Vue, and Angular</p>
+                            </div>
+                            <div class="course-badge">
+                                <span>Active</span>
+                            </div>
+                        </div>
+                        <div class="course-progress">
+                            <div class="progress-info">
+                                <span>Progress</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="course-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-play-circle"></i>
+                                <span>Next: State Management</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-clock"></i>
+                                <span>Due: 2 days</span>
+                            </div>
+                        </div>
+                        <div class="course-actions">
+                            <button class="btn btn-primary btn-sm">
+                                <i class="fas fa-play"></i>
+                                Continue
+                            </button>
+                            <button class="btn btn-outline btn-sm">
+                                <i class="fas fa-info"></i>
+                                Details
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="course-header">
+                            <div class="course-icon">
+                                <i class="fab fa-js-square"></i>
+                            </div>
+                            <div class="course-info">
+                                <h3>JavaScript Mastery</h3>
+                                <p>Advanced JS concepts and patterns</p>
+                            </div>
+                        </div>
+                        <div class="course-progress">
+                            <div class="progress-info">
+                                <span>Progress</span>
+                                <span>40%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 40%"></div>
+                            </div>
+                        </div>
+                        <div class="course-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-play-circle"></i>
+                                <span>Next: Async Programming</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-clock"></i>
+                                <span>Due: 5 days</span>
+                            </div>
+                        </div>
+                        <div class="course-actions">
+                            <button class="btn btn-primary btn-sm">
+                                <i class="fas fa-play"></i>
+                                Continue
+                            </button>
+                            <button class="btn btn-outline btn-sm">
+                                <i class="fas fa-info"></i>
+                                Details
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="course-header">
+                            <div class="course-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <div class="course-info">
+                                <h3>Backend Development</h3>
+                                <p>Node.js, Express, and Databases</p>
+                            </div>
+                        </div>
+                        <div class="course-progress">
+                            <div class="progress-info">
+                                <span>Progress</span>
+                                <span>15%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 15%"></div>
+                            </div>
+                        </div>
+                        <div class="course-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-play-circle"></i>
+                                <span>Next: REST APIs</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-clock"></i>
+                                <span>Due: 1 week</span>
+                            </div>
+                        </div>
+                        <div class="course-actions">
+                            <button class="btn btn-primary btn-sm">
+                                <i class="fas fa-play"></i>
+                                Continue
+                            </button>
+                            <button class="btn btn-outline btn-sm">
+                                <i class="fas fa-info"></i>
+                                Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recent Activity & Recommendations -->
+            <section class="content-grid">
+                <!-- Recent Activity -->
+                <div class="content-column">
+                    <div class="section-header">
+                        <h2>Recent Activity</h2>
+                        <a href="activity.html" class="view-all">View All</a>
+                    </div>
+                    <div class="activity-feed">
+                        <div class="activity-item">
+                            <div class="activity-icon completed">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Completed HTML Basics</h4>
+                                <p>You've successfully completed the HTML fundamentals module</p>
+                                <span class="activity-time">2 hours ago</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon progress">
+                                <i class="fas fa-play-circle"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Started CSS Layouts</h4>
+                                <p>You began learning about Flexbox and Grid layouts</p>
+                                <span class="activity-time">1 day ago</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon achievement">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Earned Quick Learner Badge</h4>
+                                <p>Completed 5 modules in one week! Great job!</p>
+                                <span class="activity-time">2 days ago</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon milestone">
+                                <i class="fas fa-flag"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Reached 50% Progress</h4>
+                                <p>You're halfway through the Web Development roadmap</p>
+                                <span class="activity-time">3 days ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recommendations -->
+                <div class="content-column">
+                    <div class="section-header">
+                        <h2>Recommended For You</h2>
+                        <a href="roadmap.html" class="view-all">Browse All</a>
+                    </div>
+                    <div class="recommendations-list">
+                        <div class="recommendation-card">
+                            <div class="rec-icon">
+                                <i class="fab fa-vuejs"></i>
+                            </div>
+                            <div class="rec-content">
+                                <h4>Vue.js Fundamentals</h4>
+                                <p>Based on your React progress</p>
+                                <div class="rec-meta">
+                                    <span class="level-badge beginner">Beginner</span>
+                                    <span class="duration">2 weeks</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline btn-sm">Explore</button>
+                        </div>
+                        <div class="recommendation-card">
+                            <div class="rec-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <div class="rec-content">
+                                <h4>Responsive Design</h4>
+                                <p>Complement your frontend skills</p>
+                                <div class="rec-meta">
+                                    <span class="level-badge intermediate">Intermediate</span>
+                                    <span class="duration">3 weeks</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline btn-sm">Explore</button>
+                        </div>
+                        <div class="recommendation-card">
+                            <div class="rec-icon">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <div class="rec-content">
+                                <h4>Developer Tools</h4>
+                                <p>Boost your productivity</p>
+                                <div class="rec-meta">
+                                    <span class="level-badge beginner">Beginner</span>
+                                    <span class="duration">1 week</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline btn-sm">Explore</button>
+                        </div>
+                    </div>
+
+                    <!-- Quick Stats -->
+                    <div class="quick-stats-widget">
+                        <h4>Weekly Summary</h4>
+                        <div class="stats-grid">
+                            <div class="mini-stat">
+                                <i class="fas fa-book-open"></i>
+                                <div>
+                                    <strong>8</strong>
+                                    <span>Lessons</span>
+                                </div>
+                            </div>
+                            <div class="mini-stat">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>5</strong>
+                                    <span>Completed</span>
+                                </div>
+                            </div>
+                            <div class="mini-stat">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <strong>6h</strong>
+                                    <span>Time Spent</span>
+                                </div>
+                            </div>
+                            <div class="mini-stat">
+                                <i class="fas fa-bolt"></i>
+                                <div>
+                                    <strong>7</strong>
+                                    <span>Day Streak</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Upcoming Deadlines -->
+            <section class="deadlines-section">
+                <div class="section-header">
+                    <h2>Upcoming Deadlines</h2>
+                    <a href="calendar.html" class="view-all">View Calendar</a>
+                </div>
+                <div class="deadlines-list">
+                    <div class="deadline-item urgent">
+                        <div class="deadline-icon">
+                            <i class="fas fa-exclamation-circle"></i>
+                        </div>
+                        <div class="deadline-content">
+                            <h4>CSS Layouts Project</h4>
+                            <p>Web Development Course</p>
+                            <span class="deadline-time">Due tomorrow</span>
+                        </div>
+                        <button class="btn btn-primary btn-sm">Work on it</button>
+                    </div>
+                    <div class="deadline-item">
+                        <div class="deadline-icon">
+                            <i class="fas fa-flag"></i>
+                        </div>
+                        <div class="deadline-content">
+                            <h4>JavaScript Functions Quiz</h4>
+                            <p>JavaScript Mastery Course</p>
+                            <span class="deadline-time">Due in 3 days</span>
+                        </div>
+                        <button class="btn btn-outline btn-sm">Start Quiz</button>
+                    </div>
+                    <div class="deadline-item">
+                        <div class="deadline-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <div class="deadline-content">
+                            <h4>API Design Assignment</h4>
+                            <p>Backend Development Course</p>
+                            <span class="deadline-time">Due in 1 week</span>
+                        </div>
+                        <button class="btn btn-outline btn-sm">View Details</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Search Modal -->
+    <div id="searchModal" class="modal">
+        <div class="modal-content">
+            <div class="search-modal-header">
+                <div class="search-input-group">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search courses, lessons, resources...">
+                    <button class="search-close" onclick="closeSearchModal()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="search-results">
+                <div class="recent-searches">
+                    <h4>Recent Searches</h4>
+                    <div class="search-tags">
+                        <span class="search-tag">JavaScript</span>
+                        <span class="search-tag">React Hooks</span>
+                        <span class="search-tag">CSS Grid</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/script.js"></script>
+    <script src="scripts/dashboard.js"></script>
+</body>
+</html>

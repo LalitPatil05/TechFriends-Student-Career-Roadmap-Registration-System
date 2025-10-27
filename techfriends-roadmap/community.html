@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community - TechFriends</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/community.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>TechFriends</span>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="roadmap.html" class="nav-link">Roadmaps</a>
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+                <a href="community.html" class="nav-link active">Community</a>
+                <div class="nav-actions">
+                    <button class="search-btn" id="searchToggle">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <div class="user-menu">
+                        <button class="user-btn" id="userToggle">
+                            <img src="https://ui-avatars.com/api/?name=Demo+User&background=6366f1&color=fff" alt="User" class="user-avatar">
+                            <span class="user-name">Demo User</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="user-dropdown" id="userDropdown">
+                            <div class="user-info">
+                                <img src="https://ui-avatars.com/api/?name=Demo+User&background=6366f1&color=fff" alt="User" class="user-avatar">
+                                <div class="user-details">
+                                    <strong>Demo User</strong>
+                                    <span>student@demo.com</span>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <a href="profile.html" class="dropdown-item">
+                                <i class="fas fa-user-edit"></i>
+                                Edit Profile
+                            </a>
+                            <a href="settings.html" class="dropdown-item">
+                                <i class="fas fa-cog"></i>
+                                Settings
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" class="dropdown-item logout-btn">
+                                <i class="fas fa-sign-out-alt"></i>
+                                Logout
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Community Container -->
+    <div class="community-container">
+        <!-- Community Sidebar -->
+        <aside class="community-sidebar">
+            <div class="sidebar-content">
+                <div class="community-stats">
+                    <div class="stat-card">
+                        <i class="fas fa-users"></i>
+                        <div class="stat-info">
+                            <strong>25,847</strong>
+                            <span>Community Members</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-comments"></i>
+                        <div class="stat-info">
+                            <strong>12,459</strong>
+                            <span>Discussions</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-lightbulb"></i>
+                        <div class="stat-info">
+                            <strong>8,742</strong>
+                            <span>Solutions</span>
+                        </div>
+                    </div>
+                </div>
+
+                <nav class="community-nav">
+                    <div class="nav-section">
+                        <h4>Categories</h4>
+                        <a href="#" class="nav-item active">
+                            <i class="fas fa-home"></i>
+                            <span>All Discussions</span>
+                        </a>
+                        <a href="#" class="nav-item">
+                            <i class="fas fa-fire"></i>
+                            <span>Popular</span>
+                            <span class="nav-badge">1.2k</span>
+                        </a>
+                        <a href="#" class="nav-item">
+                            <i class="fas fa-star"></i>
+                            <span>Featured</span>
+                        </a>
+                        <a href="#" class="nav-item">
+                            <i class="fas fa-question-circle"></i>
+                            <span>Questions</span>
+                            <span class="nav-badge">845</span>
+                        </a>
+                    </div>
+
+                    <div class="nav-section">
+                        <h4>Topics</h4>
+                        <a href="#" class="nav-item">
+                            <i class="fab fa-html5"></i>
+                            <span>HTML/CSS</span>
+                            <span class="nav-badge">2.3k</span>
+                        </a>
+                        <a href="#" class="nav-item">
+                            <i class="fab fa-js"></i>
+                            <span>JavaScript</span>
+                            <span class="nav-badge">3.1k</span>
+                        </a>
+                        <a href="#" class="nav-item">
+                            <i class="fab fa-react"></i>
+                            <span>React</span>
+                            <span class="nav-badge">1.8k</span>
+                        </a>
+                        <a href="#" class="nav-item">
+                            <i class="fab fa-node-js"></i>
+                            <span>Node.js</span>
+                            <span class="nav-badge">956</span>
+                        </a>
+                        <a href="#" class="nav-item">
+                            <i class="fas fa-database"></i>
+                            <span>Databases</span>
+                            <span class="nav-badge">723</span>
+                        </a>
+                        <a href="#" class="nav-item">
+                            <i class="fas fa-code"></i>
+                            <span>Career Advice</span>
+                            <span class="nav-badge">1.5k</span>
+                        </a>
+                    </div>
+
+                    <div class="nav-section">
+                        <h4>My Activity</h4>
+                        <a href="#" class="nav-item">
+                            <i class="fas fa-history"></i>
+                            <span>My Discussions</span>
+                        </a>
+                        <a href="#" class="nav-item">
+                            <i class="fas fa-comment"></i>
+                            <span>My Replies</span>
+                        </a>
+                        <a href="#" class="nav-item">
+                            <i class="fas fa-bookmark"></i>
+                            <span>Saved Posts</span>
+                        </a>
+                        <a href="#" class="nav-item">
+                            <i class="fas fa-bell"></i>
+                            <span>Notifications</span>
+                            <span class="nav-badge">3</span>
+                        </a>
+                    </div>
+                </nav>
+
+                <div class="online-users">
+                    <h4>Online Now</h4>
+                    <div class="users-list">
+                        <div class="user-avatar online">
+                            <img src="https://ui-avatars.com/api/?name=John+Doe&background=6366f1&color=fff" alt="John Doe">
+                        </div>
+                        <div class="user-avatar online">
+                            <img src="https://ui-avatars.com/api/?name=Sarah+Wilson&background=8b5cf6&color=fff" alt="Sarah Wilson">
+                        </div>
+                        <div class="user-avatar online">
+                            <img src="https://ui-avatars.com/api/?name=Mike+Chen&background=10b981&color=fff" alt="Mike Chen">
+                        </div>
+                        <div class="user-avatar online">
+                            <img src="https://ui-avatars.com/api/?name=Emma+Davis&background=f59e0b&color=fff" alt="Emma Davis">
+                        </div>
+                        <div class="more-users">+24</div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Community Main -->
+        <main class="community-main">
+            <!-- Community Header -->
+            <div class="community-header">
+                <div class="header-content">
+                    <h1>TechFriends Community</h1>
+                    <p>Connect, learn, and grow with fellow developers</p>
+                </div>
+                <div class="header-actions">
+                    <button class="btn btn-primary" id="newDiscussionBtn">
+                        <i class="fas fa-plus"></i>
+                        New Discussion
+                    </button>
+                </div>
+            </div>
+
+            <!-- Discussion Filters -->
+            <div class="discussion-filters">
+                <div class="filter-group">
+                    <button class="filter-btn active">All</button>
+                    <button class="filter-btn">Unanswered</button>
+                    <button class="filter-btn">Solved</button>
+                    <button class="filter-btn">My Posts</button>
+                </div>
+                <div class="sort-options">
+                    <select class="sort-select">
+                        <option>Newest First</option>
+                        <option>Most Popular</option>
+                        <option>Most Replies</option>
+                        <option>Recently Updated</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Discussions List -->
+            <div class="discussions-list">
+                <!-- Discussion Card 1 -->
+                <div class="discussion-card featured">
+                    <div class="discussion-header">
+                        <div class="user-info">
+                            <img src="https://ui-avatars.com/api/?name=Alex+Johnson&background=6366f1&color=fff" alt="Alex Johnson" class="user-avatar">
+                            <div class="user-details">
+                                <strong>Alex Johnson</strong>
+                                <span>2 hours ago • <i class="fas fa-eye"></i> 245</span>
+                            </div>
+                        </div>
+                        <div class="discussion-meta">
+                            <span class="badge featured-badge">
+                                <i class="fas fa-star"></i>
+                                Featured
+                            </span>
+                            <span class="badge category-badge">
+                                <i class="fab fa-react"></i>
+                                React
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="discussion-content">
+                        <h3>Best practices for React performance optimization in 2024?</h3>
+                        <p>I'm working on a large React application and noticing some performance issues, especially with re-renders. What are the current best practices for optimizing React performance? Looking for advice on memoization, code splitting, and any new React 18 features that can help...</p>
+                        <div class="discussion-tags">
+                            <span class="tag">react</span>
+                            <span class="tag">performance</span>
+                            <span class="tag">optimization</span>
+                            <span class="tag">react18</span>
+                        </div>
+                    </div>
+
+                    <div class="discussion-footer">
+                        <div class="discussion-stats">
+                            <div class="stat">
+                                <i class="fas fa-comment"></i>
+                                <span>24 replies</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-heart"></i>
+                                <span>42 likes</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-check-circle solved"></i>
+                                <span>Solved</span>
+                            </div>
+                        </div>
+                        <div class="discussion-actions">
+                            <button class="btn-text">
+                                <i class="far fa-bookmark"></i>
+                                Save
+                            </button>
+                            <button class="btn-text">
+                                <i class="far fa-heart"></i>
+                                Like
+                            </button>
+                            <button class="btn-text">
+                                <i class="far fa-comment"></i>
+                                Reply
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Discussion Card 2 -->
+                <div class="discussion-card">
+                    <div class="discussion-header">
+                        <div class="user-info">
+                            <img src="https://ui-avatars.com/api/?name=Maria+Garcia&background=8b5cf6&color=fff" alt="Maria Garcia" class="user-avatar">
+                            <div class="user-details">
+                                <strong>Maria Garcia</strong>
+                                <span>5 hours ago • <i class="fas fa-eye"></i> 189</span>
+                            </div>
+                        </div>
+                        <div class="discussion-meta">
+                            <span class="badge category-badge">
+                                <i class="fab fa-js"></i>
+                                JavaScript
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="discussion-content">
+                        <h3>Understanding JavaScript closures - practical examples needed</h3>
+                        <p>I'm struggling to understand how closures work in JavaScript, especially in practical scenarios. Can someone provide real-world examples of where closures are useful? Also, are there any common pitfalls I should watch out for?</p>
+                        <div class="discussion-tags">
+                            <span class="tag">javascript</span>
+                            <span class="tag">closures</span>
+                            <span class="tag">beginners</span>
+                        </div>
+                    </div>
+
+                    <div class="discussion-footer">
+                        <div class="discussion-stats">
+                            <div class="stat">
+                                <i class="fas fa-comment"></i>
+                                <span>18 replies</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-heart"></i>
+                                <span>31 likes</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-clock unanswered"></i>
+                                <span>Unanswered</span>
+                            </div>
+                        </div>
+                        <div class="discussion-actions">
+                            <button class="btn-text">
+                                <i class="far fa-bookmark"></i>
+                                Save
+                            </button>
+                            <button class="btn-text">
+                                <i class="far fa-heart"></i>
+                                Like
+                            </button>
+                            <button class="btn-text">
+                                <i class="far fa-comment"></i>
+                                Reply
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Discussion Card 3 -->
+                <div class="discussion-card">
+                    <div class="discussion-header">
+                        <div class="user-info">
+                            <img src="https://ui-avatars.com/api/?name=David+Kim&background=10b981&color=fff" alt="David Kim" class="user-avatar">
+                            <div class="user-details">
+                                <strong>David Kim</strong>
+                                <span>1 day ago • <i class="fas fa-eye"></i> 312</span>
+                            </div>
+                        </div>
+                        <div class="discussion-meta">
+                            <span class="badge category-badge">
+                                <i class="fas fa-code"></i>
+                                Career Advice
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="discussion-content">
+                        <h3>From junior to senior developer - what really matters?</h3>
+                        <p>I've been working as a junior developer for 2 years and want to progress to a senior role. Besides technical skills, what soft skills and mindset shifts are most important? Looking for advice from those who've made the transition successfully.</p>
+                        <div class="discussion-tags">
+                            <span class="tag">career</span>
+                            <span class="tag">advice</span>
+                            <span class="tag">senior</span>
+                            <span class="tag">growth</span>
+                        </div>
+                    </div>
+
+                    <div class="discussion-footer">
+                        <div class="discussion-stats">
+                            <div class="stat">
+                                <i class="fas fa-comment"></i>
+                                <span>47 replies</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-heart"></i>
+                                <span>89 likes</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-check-circle solved"></i>
+                                <span>Solved</span>
+                            </div>
+                        </div>
+                        <div class="discussion-actions">
+                            <button class="btn-text">
+                                <i class="far fa-bookmark"></i>
+                                Save
+                            </button>
+                            <button class="btn-text">
+                                <i class="far fa-heart"></i>
+                                Like
+                            </button>
+                            <button class="btn-text">
+                                <i class="far fa-comment"></i>
+                                Reply
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Load More -->
+            <div class="load-more">
+                <button class="btn btn-outline" id="loadMoreDiscussions">
+                    <i class="fas fa-spinner fa-spin" style="display: none;"></i>
+                    Load More Discussions
+                </button>
+            </div>
+        </main>
+
+        <!-- Community Sidebar Right -->
+        <aside class="community-sidebar-right">
+            <div class="sidebar-widget">
+                <h3>Top Contributors</h3>
+                <div class="contributors-list">
+                    <div class="contributor">
+                        <div class="contributor-info">
+                            <img src="https://ui-avatars.com/api/?name=Alex+Johnson&background=6366f1&color=fff" alt="Alex Johnson" class="contributor-avatar">
+                            <div class="contributor-details">
+                                <strong>Alex Johnson</strong>
+                                <span>1,248 solutions</span>
+                            </div>
+                        </div>
+                        <div class="contributor-badge">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                    </div>
+                    <div class="contributor">
+                        <div class="contributor-info">
+                            <img src="https://ui-avatars.com/api/?name=Sarah+Chen&background=8b5cf6&color=fff" alt="Sarah Chen" class="contributor-avatar">
+                            <div class="contributor-details">
+                                <strong>Sarah Chen</strong>
+                                <span>987 solutions</span>
+                            </div>
+                        </div>
+                        <div class="contributor-badge">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                    </div>
+                    <div class="contributor">
+                        <div class="contributor-info">
+                            <img src="https://ui-avatars.com/api/?name=Mike+Rodriguez&background=10b981&color=fff" alt="Mike Rodriguez" class="contributor-avatar">
+                            <div class="contributor-details">
+                                <strong>Mike Rodriguez</strong>
+                                <span>756 solutions</span>
+                            </div>
+                        </div>
+                        <div class="contributor-badge">
+                            <i class="fas fa-award"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3>Community Guidelines</h3>
+                <div class="guidelines-list">
+                    <div class="guideline">
+                        <i class="fas fa-heart"></i>
+                        <span>Be respectful and inclusive</span>
+                    </div>
+                    <div class="guideline">
+                        <i class="fas fa-lightbulb"></i>
+                        <span>Share knowledge generously</span>
+                    </div>
+                    <div class="guideline">
+                        <i class="fas fa-search"></i>
+                        <span>Search before posting</span>
+                    </div>
+                    <div class="guideline">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Mark solutions as solved</span>
+                    </div>
+                    <div class="guideline">
+                        <i class="fas fa-flag"></i>
+                        <span>Report inappropriate content</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3>Upcoming Events</h3>
+                <div class="events-list">
+                    <div class="event">
+                        <div class="event-date">
+                            <strong>15</strong>
+                            <span>JAN</span>
+                        </div>
+                        <div class="event-details">
+                            <h4>React Workshop</h4>
+                            <span>Live coding session</span>
+                        </div>
+                    </div>
+                    <div class="event">
+                        <div class="event-date">
+                            <strong>22</strong>
+                            <span>JAN</span>
+                        </div>
+                        <div class="event-details">
+                            <h4>Career Q&A</h4>
+                            <span>Industry experts panel</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- New Discussion Modal -->
+    <div id="newDiscussionModal" class="modal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3>Start New Discussion</h3>
+                <button class="modal-close" onclick="closeNewDiscussionModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="discussion-form" id="newDiscussionForm">
+                    <div class="form-group">
+                        <label for="discussionTitle">Title</label>
+                        <input type="text" id="discussionTitle" placeholder="What's your question or topic?" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="discussionCategory">Category</label>
+                        <select id="discussionCategory" required>
+                            <option value="">Select a category</option>
+                            <option value="html-css">HTML/CSS</option>
+                            <option value="javascript">JavaScript</option>
+                            <option value="react">React</option>
+                            <option value="nodejs">Node.js</option>
+                            <option value="career">Career Advice</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="discussionContent">Content</label>
+                        <div class="editor-toolbar">
+                            <button type="button" class="toolbar-btn" data-format="bold"><i class="fas fa-bold"></i></button>
+                            <button type="button" class="toolbar-btn" data-format="italic"><i class="fas fa-italic"></i></button>
+                            <button type="button" class="toolbar-btn" data-format="code"><i class="fas fa-code"></i></button>
+                            <button type="button" class="toolbar-btn" data-format="link"><i class="fas fa-link"></i></button>
+                        </div>
+                        <textarea id="discussionContent" placeholder="Describe your question or topic in detail..." rows="10" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="discussionTags">Tags</label>
+                        <div class="tags-input">
+                            <input type="text" id="discussionTags" placeholder="Add tags (press Enter to add)">
+                            <div class="tags-list" id="tagsList"></div>
+                        </div>
+                        <small>Add up to 5 tags to help others find your discussion</small>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" onclick="closeNewDiscussionModal()">
+                            Cancel
+                        </button>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Post Discussion
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/script.js"></script>
+    <script src="scripts/community.js"></script>
+</body>
+</html>
