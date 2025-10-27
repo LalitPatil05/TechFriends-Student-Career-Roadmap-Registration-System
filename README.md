@@ -217,27 +217,19 @@ We welcome contributions from the community! Here's how you can help:
 
 ## 📝 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://LalitPatil05.github.io/TechFriends-Student-Career-Roadmap-Registration-System/techfriends-roadmap/termservices.html) file for details.
 
-## 👨‍💻 Development Team
+## 👨‍💻 Developed By
 
-- **Lalit Patil** - Project Lead & Full-Stack Developer
+- **Lalit Patil** - 
 - **Open Source Contributors** - Community developers
 
 ## 📞 Support & Contact
 
-- **Email**: support@techfriends.com
+- **Email**: lalitpatil4636@gmail.com
 - **Issues**: [GitHub Issues](https://github.com/LalitPatil05/TechFriends-Student-Career-Roadmap-Registration-System/issues)
 
 
-## 🙏 Acknowledgments
-
-- Bootstrap team for the amazing framework
-- Font Awesome for beautiful icons
-- Open source community for continuous inspiration
-- All contributors and testers who helped improve the platform
-
----
 
 <div align="center">
 
@@ -245,7 +237,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 [**Get Started →**](https://LalitPatil05.github.io/TechFriends-Student-Career-Roadmap-Registration-System/techfriends-roadmap/)
 
-*Empowering students to build successful tech careers since 2024*
+*Empowering students to build successful tech careers since 2025*
 
 </div>
 
