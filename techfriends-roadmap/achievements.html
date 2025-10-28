@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievements - TechFriends</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/dashboard.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>TechFriends</span>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="roadmap.html" class="nav-link">Roadmaps</a>
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+                <div class="nav-actions">
+                    <button class="search-btn" id="searchToggle">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <div class="user-menu">
+                        <button class="user-btn" id="userToggle">
+                            <img src="https://ui-avatars.com/api/?name=Demo+User&background=6366f1&color=fff" alt="User" class="user-avatar">
+                            <span class="user-name">Demo User</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="user-dropdown" id="userDropdown">
+                            <div class="user-info">
+                                <img src="https://ui-avatars.com/api/?name=Demo+User&background=6366f1&color=fff" alt="User" class="user-avatar">
+                                <div class="user-details">
+                                    <a href="profile.html"><strong>Demo User</strong></a>
+                                    <span>student@demo.com</span>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <a href="profile.html" class="dropdown-item">
+                                <i class="fas fa-user-edit"></i>
+                                Edit Profile
+                            </a>
+                            <a href="settings.html" class="dropdown-item">
+                                <i class="fas fa-cog"></i>
+                                Settings
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="login.html" class="dropdown-item logout-btn">
+                                <i class="fas fa-sign-out-alt"></i>
+                                Logout
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Container -->
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-content">
+                <div class="user-widget">
+                    <div class="user-avatar-large">
+                        <img src="https://ui-avatars.com/api/?name=Demo+User&background=6366f1&color=fff" alt="User">
+                    </div>
+                    <div class="user-info">
+                        <h3>Demo User</h3>
+                        <p>Web Development Student</p>
+                        <div class="user-stats">
+                            <div class="stat">
+                                <strong>65%</strong>
+                                <span>Progress</span>
+                            </div>
+                            <div class="stat">
+                                <strong>12</strong>
+                                <span>Courses</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <nav class="sidebar-nav">
+                    <a href="dashboard.html" class="nav-item">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="my-courses.html" class="nav-item">
+                        <i class="fas fa-book-open"></i>
+                        <span>My Courses</span>
+                        <span class="nav-badge">5</span>
+                    </a>
+                    <a href="progress.html" class="nav-item">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Progress</span>
+                    </a>
+                    <a href="achievements.html" class="nav-item active">
+                        <i class="fas fa-trophy"></i>
+                        <span>Achievements</span>
+                        <span class="nav-badge">8</span>
+                    </a>
+                    <a href="resources.html" class="nav-item">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Resources</span>
+                    </a>
+                    <a href="community.html" class="nav-item">
+                        <i class="fas fa-users"></i>
+                        <span>Community</span>
+                    </a>
+                    <div class="nav-divider"></div>
+                    <a href="settings.html" class="nav-item">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </a>
+                    <a href="help.html" class="nav-item">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Help & Support</span>
+                    </a>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Page Header -->
+            <section class="page-header">
+                <div class="header-content">
+                    <h1>Achievements</h1>
+                    <p>Celebrate your learning milestones and accomplishments</p>
+                </div>
+                <div class="header-stats">
+                    <div class="achievement-summary">
+                        <div class="summary-item">
+                            <strong>8</strong>
+                            <span>Unlocked</span>
+                        </div>
+                        <div class="summary-item">
+                            <strong>12</strong>
+                            <span>In Progress</span>
+                        </div>
+                        <div class="summary-item">
+                            <strong>650</strong>
+                            <span>Points</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Achievements Overview -->
+            <section class="achievements-overview">
+                <div class="achievement-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Level 5 Learner</h3>
+                            <span>Current Level</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>15 Days</h3>
+                            <span>Learning Streak</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Top 10%</h3>
+                            <span>Platform Rank</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Achievements Grid -->
+            <section class="achievements-section">
+                <div class="section-header">
+                    <h2>Your Achievements</h2>
+                    <div class="filter-controls">
+                        <select class="filter-select">
+                            <option value="all">All Achievements</option>
+                            <option value="unlocked">Unlocked</option>
+                            <option value="locked">Locked</option>
+                            <option value="progress">In Progress</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="achievements-grid">
+                    <!-- Unlocked Achievement 1 -->
+                    <div class="achievement-card unlocked">
+                        <div class="achievement-icon">
+                            <i class="fas fa-rocket"></i>
+                            <div class="badge-ribbon">Unlocked</div>
+                        </div>
+                        <div class="achievement-content">
+                            <h3>Quick Starter</h3>
+                            <p>Complete your first course within 2 weeks of enrollment</p>
+                            <div class="achievement-meta">
+                                <span class="points">+50 pts</span>
+                                <span class="date">Unlocked: Dec 15, 2023</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Unlocked Achievement 2 -->
+                    <div class="achievement-card unlocked">
+                        <div class="achievement-icon">
+                            <i class="fas fa-bolt"></i>
+                            <div class="badge-ribbon">Unlocked</div>
+                        </div>
+                        <div class="achievement-content">
+                            <h3>Speed Learner</h3>
+                            <p>Complete 5 modules in a single day</p>
+                            <div class="achievement-meta">
+                                <span class="points">+75 pts</span>
+                                <span class="date">Unlocked: Dec 12, 2023</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Unlocked Achievement 3 -->
+                    <div class="achievement-card unlocked">
+                        <div class="achievement-icon">
+                            <i class="fas fa-code"></i>
+                            <div class="badge-ribbon">Unlocked</div>
+                        </div>
+                        <div class="achievement-content">
+                            <h3>HTML Master</h3>
+                            <p>Score 95% or higher in HTML fundamentals assessment</p>
+                            <div class="achievement-meta">
+                                <span class="points">+100 pts</span>
+                                <span class="date">Unlocked: Dec 8, 2023</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- In Progress Achievement -->
+                    <div class="achievement-card progress">
+                        <div class="achievement-icon">
+                            <i class="fas fa-fire"></i>
+                            <div class="progress-ring">
+                                <svg width="60" height="60">
+                                    <circle cx="30" cy="30" r="25" stroke="#e2e8f0" stroke-width="4" fill="none"></circle>
+                                    <circle cx="30" cy="30" r="25" stroke="#6366f1" stroke-width="4" fill="none" 
+                                            stroke-dasharray="157" stroke-dashoffset="78.5" stroke-linecap="round"></circle>
+                                </svg>
+                                <span>50%</span>
+                            </div>
+                        </div>
+                        <div class="achievement-content">
+                            <h3>Consistent Learner</h3>
+                            <p>Maintain a 30-day learning streak</p>
+                            <div class="achievement-meta">
+                                <span class="points">+150 pts</span>
+                                <span class="progress-text">15/30 days completed</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 50%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Locked Achievement 1 -->
+                    <div class="achievement-card locked">
+                        <div class="achievement-icon">
+                            <i class="fas fa-gem"></i>
+                            <div class="lock-icon">
+                                <i class="fas fa-lock"></i>
+                            </div>
+                        </div>
+                        <div class="achievement-content">
+                            <h3>JavaScript Ninja</h3>
+                            <p>Complete all advanced JavaScript challenges with 100% score</p>
+                            <div class="achievement-meta">
+                                <span class="points">+200 pts</span>
+                                <span class="requirement">Complete JS Mastery course</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Locked Achievement 2 -->
+                    <div class="achievement-card locked">
+                        <div class="achievement-icon">
+                            <i class="fas fa-users"></i>
+                            <div class="lock-icon">
+                                <i class="fas fa-lock"></i>
+                            </div>
+                        </div>
+                        <div class="achievement-content">
+                            <h3>Community Helper</h3>
+                            <p>Help 50 other students in the community forum</p>
+                            <div class="achievement-meta">
+                                <span class="points">+125 pts</span>
+                                <span class="requirement">12/50 helps given</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recent Achievements -->
+            <section class="recent-achievements">
+                <div class="section-header">
+                    <h2>Recently Unlocked</h2>
+                    <a href="#" class="view-all">View All</a>
+                </div>
+                <div class="achievements-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h4>HTML Master</h4>
+                            <p>Scored 96% in HTML fundamentals assessment</p>
+                            <span class="timeline-date">2 days ago</span>
+                        </div>
+                        <div class="timeline-points">+100 pts</div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h4>Speed Learner</h4>
+                            <p>Completed 5 modules in one day</p>
+                            <span class="timeline-date">1 week ago</span>
+                        </div>
+                        <div class="timeline-points">+75 pts</div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h4>Quick Starter</h4>
+                            <p>Finished first course in record time</p>
+                            <span class="timeline-date">2 weeks ago</span>
+                        </div>
+                        <div class="timeline-points">+50 pts</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="scripts/script.js"></script>
+    <script src="scripts/achievements.js"></script>
+</body>
+</html>

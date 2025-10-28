@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help & Support - TechFriends</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/dashboard.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>TechFriends</span>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="roadmap.html" class="nav-link">Roadmaps</a>
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+                <div class="nav-actions">
+                    <button class="search-btn" id="searchToggle">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <div class="user-menu">
+                        <button class="user-btn" id="userToggle">
+                            <img src="https://ui-avatars.com/api/?name=Demo+User&background=6366f1&color=fff" alt="User" class="user-avatar">
+                            <span class="user-name">Demo User</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="user-dropdown" id="userDropdown">
+                            <div class="user-info">
+                                <img src="https://ui-avatars.com/api/?name=Demo+User&background=6366f1&color=fff" alt="User" class="user-avatar">
+                                <div class="user-details">
+                                    <a href="profile.html"><strong>Demo User</strong></a>
+                                    <span>student@demo.com</span>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <a href="profile.html" class="dropdown-item">
+                                <i class="fas fa-user-edit"></i>
+                                Edit Profile
+                            </a>
+                            <a href="settings.html" class="dropdown-item">
+                                <i class="fas fa-cog"></i>
+                                Settings
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="login.html" class="dropdown-item logout-btn">
+                                <i class="fas fa-sign-out-alt"></i>
+                                Logout
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Container -->
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-content">
+                <div class="user-widget">
+                    <div class="user-avatar-large">
+                        <img src="https://ui-avatars.com/api/?name=Demo+User&background=6366f1&color=fff" alt="User">
+                    </div>
+                    <div class="user-info">
+                        <h3>Demo User</h3>
+                        <p>Web Development Student</p>
+                        <div class="user-stats">
+                            <div class="stat">
+                                <strong>65%</strong>
+                                <span>Progress</span>
+                            </div>
+                            <div class="stat">
+                                <strong>12</strong>
+                                <span>Courses</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <nav class="sidebar-nav">
+                    <a href="dashboard.html" class="nav-item">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="my-courses.html" class="nav-item">
+                        <i class="fas fa-book-open"></i>
+                        <span>My Courses</span>
+                        <span class="nav-badge">5</span>
+                    </a>
+                    <a href="progress.html" class="nav-item">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Progress</span>
+                    </a>
+                    <a href="achievements.html" class="nav-item">
+                        <i class="fas fa-trophy"></i>
+                        <span>Achievements</span>
+                        <span class="nav-badge">8</span>
+                    </a>
+                    <a href="resources.html" class="nav-item">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Resources</span>
+                    </a>
+                    <a href="community.html" class="nav-item">
+                        <i class="fas fa-users"></i>
+                        <span>Community</span>
+                    </a>
+                    <div class="nav-divider"></div>
+                    <a href="settings.html" class="nav-item">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </a>
+                    <a href="help.html" class="nav-item active">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Help & Support</span>
+                    </a>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Page Header -->
+            <section class="page-header">
+                <div class="header-content">
+                    <h1>Help & Support</h1>
+                    <p>Get help with your learning journey and platform features</p>
+                </div>
+                <div class="header-actions">
+                    <button class="btn btn-primary">
+                        <i class="fas fa-headset"></i>
+                        Contact Support
+                    </button>
+                </div>
+            </section>
+
+            <!-- Quick Help Cards -->
+            <section class="quick-help">
+                <div class="help-cards-grid">
+                    <div class="help-card">
+                        <div class="help-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h3>Documentation</h3>
+                        <p>Comprehensive guides and tutorials for all platform features</p>
+                        <button class="btn btn-outline">Browse Docs</button>
+                    </div>
+                    
+                    <div class="help-card">
+                        <div class="help-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <h3>Video Tutorials</h3>
+                        <p>Step-by-step video guides for common tasks and features</p>
+                        <button class="btn btn-outline">Watch Videos</button>
+                    </div>
+                    
+                    <div class="help-card">
+                        <div class="help-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3>Community Forum</h3>
+                        <p>Get help from other students and share your knowledge</p>
+                        <button class="btn btn-outline">Visit Forum</button>
+                    </div>
+                    
+                    <div class="help-card">
+                        <div class="help-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3>Live Support</h3>
+                        <p>Chat with our support team for immediate assistance</p>
+                        <button class="btn btn-primary">Start Chat</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="faq-section">
+                <div class="section-header">
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="search-faq">
+                        <div class="search-input-group">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Search FAQs...">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-categories">
+                    <div class="category-tabs">
+                        <button class="category-tab active" data-category="general">General</button>
+                        <button class="category-tab" data-category="courses">Courses</button>
+                        <button class="category-tab" data-category="account">Account</button>
+                        <button class="category-tab" data-category="technical">Technical</button>
+                    </div>
+
+                    <div class="faq-list">
+                        <!-- General FAQ -->
+                        <div class="faq-item active" data-category="general">
+                            <div class="faq-question">
+                                <h4>How do I reset my progress in a course?</h4>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>To reset your progress in a course, go to the course page and click on the settings icon (three dots) in the top right corner. Select "Reset Progress" from the dropdown menu. Please note that this action cannot be undone and will remove all your completed lessons and quiz scores for that course.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item active" data-category="general">
+                            <div class="faq-question">
+                                <h4>Can I download courses for offline viewing?</h4>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes, most courses can be downloaded for offline viewing. Look for the download icon next to each lesson or module. You'll need the TechFriends mobile app to access downloaded content offline. Some courses with interactive coding exercises may have limited offline functionality.</p>
+                            </div>
+                        </div>
+
+                        <!-- Courses FAQ -->
+                        <div class="faq-item" data-category="courses">
+                            <div class="faq-question">
+                                <h4>How do I enroll in a new course?</h4>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>To enroll in a new course, navigate to the "Roadmaps" section from the main navigation. Browse through available courses and click on any course that interests you. On the course page, click the "Enroll" button to add it to your learning path. Some advanced courses may require completing prerequisites first.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item" data-category="courses">
+                            <div class="faq-question">
+                                <h4>What happens if I fall behind in a course?</h4>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Don't worry! Our platform is designed for flexible learning. You can learn at your own pace. If you need to catch up, you can review previous lessons and use the "Study Plan" feature to create a customized schedule. You can also reach out to our community or mentors for additional support.</p>
+                            </div>
+                        </div>
+
+                        <!-- Account FAQ -->
+                        <div class="faq-item" data-category="account">
+                            <div class="faq-question">
+                                <h4>How do I update my email address?</h4>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>To update your email address, go to your profile settings by clicking on your avatar in the top right corner and selecting "Settings". In the "Account" tab, you'll find the option to change your email address. You'll need to verify your new email address through a confirmation link sent to your new email.</p>
+                            </div>
+                        </div>
+
+                        <!-- Technical FAQ -->
+                        <div class="faq-item" data-category="technical">
+                            <div class="faq-question">
+                                <h4>The code editor is not working properly. What should I do?</h4>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>If you're experiencing issues with the code editor, try these steps: 1) Refresh the page, 2) Clear your browser cache, 3) Try using a different browser (Chrome or Firefox recommended), 4) Check if JavaScript is enabled in your browser settings. If the issue persists, contact our technical support team with details about the problem.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Support -->
+            <section class="contact-support">
+                <div class="support-card">
+                    <div class="support-content">
+                        <h2>Still Need Help?</h2>
+                        <p>Our support team is here to assist you with any questions or issues you may have.</p>
+                        <div class="support-options">
+                            <div class="support-option">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <h4>Email Support</h4>
+                                    <p>support@techfriends.com</p>
+                                    <span>Typically responds within 24 hours</span>
+                                </div>
+                            </div>
+                            <div class="support-option">
+                                <i class="fas fa-comment-dots"></i>
+                                <div>
+                                    <h4>Live Chat</h4>
+                                    <p>Available 9 AM - 6 PM EST</p>
+                                    <span>Instant help during business hours</span>
+                                </div>
+                            </div>
+                            <div class="support-option">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <h4>Phone Support</h4>
+                                    <p>+1 (555) 123-HELP</p>
+                                    <span>Mon-Fri, 10 AM - 4 PM EST</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="support-form">
+                        <h3>Send us a Message</h3>
+                        <form>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" placeholder="What do you need help with?">
+                            </div>
+                            <div class="form-group">
+                                <label for="description">Description</label>
+                                <textarea id="description" rows="4" placeholder="Please describe your issue in detail..."></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="attachment">Attach Screenshot (Optional)</label>
+                                <input type="file" id="attachment" accept="image/*">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="scripts/script.js"></script>
+    <script src="scripts/help.js"></script>
+</body>
+</html>

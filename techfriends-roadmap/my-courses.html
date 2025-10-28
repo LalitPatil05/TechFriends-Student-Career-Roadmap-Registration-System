@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Courses - TechFriends</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/dashboard.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>TechFriends</span>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="roadmap.html" class="nav-link">Roadmaps</a>
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+                <div class="nav-actions">
+                    <button class="search-btn" id="searchToggle">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <div class="user-menu">
+                        <button class="user-btn" id="userToggle">
+                            <img src="https://ui-avatars.com/api/?name=Demo+User&background=6366f1&color=fff" alt="User" class="user-avatar">
+                            <span class="user-name">Demo User</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="user-dropdown" id="userDropdown">
+                            <div class="user-info">
+                                <img src="https://ui-avatars.com/api/?name=Demo+User&background=6366f1&color=fff" alt="User" class="user-avatar">
+                                <div class="user-details">
+                                    <a href="profile.html"><strong>Demo User</strong></a>
+                                    <span>student@demo.com</span>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <a href="profile.html" class="dropdown-item">
+                                <i class="fas fa-user-edit"></i>
+                                Edit Profile
+                            </a>
+                            <a href="settings.html" class="dropdown-item">
+                                <i class="fas fa-cog"></i>
+                                Settings
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="login.html" class="dropdown-item logout-btn">
+                                <i class="fas fa-sign-out-alt"></i>
+                                Logout
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Container -->
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-content">
+                <div class="user-widget">
+                    <div class="user-avatar-large">
+                        <img src="https://ui-avatars.com/api/?name=Demo+User&background=6366f1&color=fff" alt="User">
+                    </div>
+                    <div class="user-info">
+                        <h3>Demo User</h3>
+                        <p>Web Development Student</p>
+                        <div class="user-stats">
+                            <div class="stat">
+                                <strong>65%</strong>
+                                <span>Progress</span>
+                            </div>
+                            <div class="stat">
+                                <strong>12</strong>
+                                <span>Courses</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <nav class="sidebar-nav">
+                    <a href="dashboard.html" class="nav-item">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="my-courses.html" class="nav-item active">
+                        <i class="fas fa-book-open"></i>
+                        <span>My Courses</span>
+                        <span class="nav-badge">5</span>
+                    </a>
+                    <a href="progress.html" class="nav-item">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Progress</span>
+                    </a>
+                    <a href="achievements.html" class="nav-item">
+                        <i class="fas fa-trophy"></i>
+                        <span>Achievements</span>
+                        <span class="nav-badge">8</span>
+                    </a>
+                    <a href="resources.html" class="nav-item">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Resources</span>
+                    </a>
+                    <a href="community.html" class="nav-item">
+                        <i class="fas fa-users"></i>
+                        <span>Community</span>
+                    </a>
+                    <div class="nav-divider"></div>
+                    <a href="settings.html" class="nav-item">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </a>
+                    <a href="help.html" class="nav-item">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Help & Support</span>
+                    </a>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Page Header -->
+            <section class="page-header">
+                <div class="header-content">
+                    <h1>My Courses</h1>
+                    <p>Manage and continue your learning journey</p>
+                </div>
+                <div class="header-actions">
+                    <div class="filter-controls">
+                        <select class="filter-select">
+                            <option value="all">All Courses</option>
+                            <option value="active">Active</option>
+                            <option value="completed">Completed</option>
+                            <option value="paused">Paused</option>
+                        </select>
+                        <button class="btn btn-primary">
+                            <i class="fas fa-plus"></i>
+                            Add Course
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Courses Grid -->
+            <section class="courses-grid-section">
+                <div class="courses-tabs">
+                    <button class="tab-btn active" data-tab="active">Active Courses</button>
+                    <button class="tab-btn" data-tab="completed">Completed</button>
+                    <button class="tab-btn" data-tab="bookmarked">Bookmarked</button>
+                </div>
+
+                <div class="courses-grid expanded">
+                    <!-- Active Course 1 -->
+                    <div class="course-card detailed active">
+                        <div class="course-header">
+                            <div class="course-icon">
+                                <i class="fab fa-react"></i>
+                            </div>
+                            <div class="course-info">
+                                <h3>Frontend Development</h3>
+                                <p>Modern React, Vue, and Angular</p>
+                                <div class="course-meta-tags">
+                                    <span class="tag intermediate">Intermediate</span>
+                                    <span class="tag duration">8 weeks</span>
+                                </div>
+                            </div>
+                            <div class="course-status">
+                                <span class="status-badge active">Active</span>
+                            </div>
+                        </div>
+                        
+                        <div class="course-progress">
+                            <div class="progress-info">
+                                <span>Progress: 75%</span>
+                                <span>12/16 modules</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 75%"></div>
+                            </div>
+                        </div>
+
+                        <div class="course-details">
+                            <div class="detail-item">
+                                <i class="fas fa-play-circle"></i>
+                                <div>
+                                    <strong>Next Lesson</strong>
+                                    <span>State Management</span>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <strong>Due Date</strong>
+                                    <span>2 days left</span>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-chart-line"></i>
+                                <div>
+                                    <strong>Performance</strong>
+                                    <span class="performance good">85%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="course-actions">
+                            <button class="btn btn-primary">
+                                <i class="fas fa-play"></i>
+                                Continue
+                            </button>
+                            <button class="btn btn-outline">
+                                <i class="fas fa-info-circle"></i>
+                                Details
+                            </button>
+                            <button class="btn btn-icon">
+                                <i class="fas fa-bookmark"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Active Course 2 -->
+                    <div class="course-card detailed active">
+                        <div class="course-header">
+                            <div class="course-icon">
+                                <i class="fab fa-js-square"></i>
+                            </div>
+                            <div class="course-info">
+                                <h3>JavaScript Mastery</h3>
+                                <p>Advanced JS concepts and patterns</p>
+                                <div class="course-meta-tags">
+                                    <span class="tag advanced">Advanced</span>
+                                    <span class="tag duration">6 weeks</span>
+                                </div>
+                            </div>
+                            <div class="course-status">
+                                <span class="status-badge active">Active</span>
+                            </div>
+                        </div>
+                        
+                        <div class="course-progress">
+                            <div class="progress-info">
+                                <span>Progress: 40%</span>
+                                <span>6/15 modules</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 40%"></div>
+                            </div>
+                        </div>
+
+                        <div class="course-details">
+                            <div class="detail-item">
+                                <i class="fas fa-play-circle"></i>
+                                <div>
+                                    <strong>Next Lesson</strong>
+                                    <span>Async Programming</span>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <strong>Due Date</strong>
+                                    <span>5 days left</span>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-chart-line"></i>
+                                <div>
+                                    <strong>Performance</strong>
+                                    <span class="performance average">72%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="course-actions">
+                            <button class="btn btn-primary">
+                                <i class="fas fa-play"></i>
+                                Continue
+                            </button>
+                            <button class="btn btn-outline">
+                                <i class="fas fa-info-circle"></i>
+                                Details
+                            </button>
+                            <button class="btn btn-icon">
+                                <i class="fas fa-bookmark"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Completed Course -->
+                    <div class="course-card detailed completed">
+                        <div class="course-header">
+                            <div class="course-icon">
+                                <i class="fab fa-html5"></i>
+                            </div>
+                            <div class="course-info">
+                                <h3>HTML & CSS Fundamentals</h3>
+                                <p>Web development basics</p>
+                                <div class="course-meta-tags">
+                                    <span class="tag beginner">Beginner</span>
+                                    <span class="tag duration">4 weeks</span>
+                                </div>
+                            </div>
+                            <div class="course-status">
+                                <span class="status-badge completed">Completed</span>
+                            </div>
+                        </div>
+                        
+                        <div class="course-progress">
+                            <div class="progress-info">
+                                <span>Progress: 100%</span>
+                                <span>10/10 modules</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 100%"></div>
+                            </div>
+                        </div>
+
+                        <div class="course-details">
+                            <div class="detail-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Completed</strong>
+                                    <span>2 weeks ago</span>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-star"></i>
+                                <div>
+                                    <strong>Final Grade</strong>
+                                    <span class="performance excellent">94%</span>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-certificate"></i>
+                                <div>
+                                    <strong>Certificate</strong>
+                                    <span>Available</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="course-actions">
+                            <button class="btn btn-outline">
+                                <i class="fas fa-download"></i>
+                                Certificate
+                            </button>
+                            <button class="btn btn-outline">
+                                <i class="fas fa-redo"></i>
+                                Review
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Bookmarked Course -->
+                    <div class="course-card detailed bookmarked">
+                        <div class="course-header">
+                            <div class="course-icon">
+                                <i class="fab fa-python"></i>
+                            </div>
+                            <div class="course-info">
+                                <h3>Python for Beginners</h3>
+                                <p>Learn Python programming basics</p>
+                                <div class="course-meta-tags">
+                                    <span class="tag beginner">Beginner</span>
+                                    <span class="tag duration">5 weeks</span>
+                                </div>
+                            </div>
+                            <div class="course-status">
+                                <span class="status-badge upcoming">Upcoming</span>
+                            </div>
+                        </div>
+                        
+                        <div class="course-progress">
+                            <div class="progress-info">
+                                <span>Starts: Jan 15, 2024</span>
+                                <span>0/12 modules</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                        </div>
+
+                        <div class="course-details">
+                            <div class="detail-item">
+                                <i class="fas fa-calendar"></i>
+                                <div>
+                                    <strong>Start Date</strong>
+                                    <span>Jan 15, 2024</span>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <strong>Duration</strong>
+                                    <span>5 weeks</span>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-users"></i>
+                                <div>
+                                    <strong>Enrolled</strong>
+                                    <span>Coming soon</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="course-actions">
+                            <button class="btn btn-primary" disabled>
+                                <i class="fas fa-lock"></i>
+                                Starts Soon
+                            </button>
+                            <button class="btn btn-outline">
+                                <i class="fas fa-bookmark"></i>
+                                Bookmarked
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Learning Stats -->
+            <section class="learning-stats">
+                <div class="stats-grid">
+                    <div class="stat-card large">
+                        <div class="stat-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Total Courses</h3>
+                            <div class="stat-value">12</div>
+                            <div class="stat-breakdown">
+                                <span>5 Active</span>
+                                <span>4 Completed</span>
+                                <span>3 Bookmarked</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card large">
+                        <div class="stat-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Learning Time</h3>
+                            <div class="stat-value">48h 30m</div>
+                            <div class="stat-breakdown">
+                                <span>This Month: 12h</span>
+                                <span>Last Month: 36h</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card large">
+                        <div class="stat-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Average Score</h3>
+                            <div class="stat-value">84%</div>
+                            <div class="stat-breakdown">
+                                <span>Best: 96%</span>
+                                <span>Improvement: +12%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="scripts/script.js"></script>
+    <script src="scripts/my-courses.js"></script>
+</body>
+</html>

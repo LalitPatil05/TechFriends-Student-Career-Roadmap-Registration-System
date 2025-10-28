@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - TechFriends</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/dashboard.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>TechFriends</span>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="roadmap.html" class="nav-link">Roadmaps</a>
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+                <div class="nav-actions">
+                    <button class="search-btn" id="searchToggle">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <div class="user-menu">
+                        <button class="user-btn" id="userToggle">
+                            <img src="https://ui-avatars.com/api/?name=Demo+User&background=6366f1&color=fff" alt="User" class="user-avatar">
+                            <span class="user-name">Demo User</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="user-dropdown" id="userDropdown">
+                            <div class="user-info">
+                                <img src="https://ui-avatars.com/api/?name=Demo+User&background=6366f1&color=fff" alt="User" class="user-avatar">
+                                <div class="user-details">
+                                    <a href="profile.html"><strong>Demo User</strong></a>
+                                    <span>student@demo.com</span>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <a href="profile.html" class="dropdown-item">
+                                <i class="fas fa-user-edit"></i>
+                                Edit Profile
+                            </a>
+                            <a href="settings.html" class="dropdown-item">
+                                <i class="fas fa-cog"></i>
+                                Settings
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="login.html" class="dropdown-item logout-btn">
+                                <i class="fas fa-sign-out-alt"></i>
+                                Logout
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Container -->
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-content">
+                <div class="user-widget">
+                    <div class="user-avatar-large">
+                        <img src="https://ui-avatars.com/api/?name=Demo+User&background=6366f1&color=fff" alt="User">
+                    </div>
+                    <div class="user-info">
+                        <h3>Demo User</h3>
+                        <p>Web Development Student</p>
+                        <div class="user-stats">
+                            <div class="stat">
+                                <strong>65%</strong>
+                                <span>Progress</span>
+                            </div>
+                            <div class="stat">
+                                <strong>12</strong>
+                                <span>Courses</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <nav class="sidebar-nav">
+                    <a href="dashboard.html" class="nav-item">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="my-courses.html" class="nav-item">
+                        <i class="fas fa-book-open"></i>
+                        <span>My Courses</span>
+                        <span class="nav-badge">5</span>
+                    </a>
+                    <a href="progress.html" class="nav-item">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Progress</span>
+                    </a>
+                    <a href="achievements.html" class="nav-item">
+                        <i class="fas fa-trophy"></i>
+                        <span>Achievements</span>
+                        <span class="nav-badge">8</span>
+                    </a>
+                    <a href="resources.html" class="nav-item active">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Resources</span>
+                    </a>
+                    <a href="community.html" class="nav-item">
+                        <i class="fas fa-users"></i>
+                        <span>Community</span>
+                    </a>
+                    <div class="nav-divider"></div>
+                    <a href="settings.html" class="nav-item">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </a>
+                    <a href="help.html" class="nav-item">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Help & Support</span>
+                    </a>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Page Header -->
+            <section class="page-header">
+                <div class="header-content">
+                    <h1>Learning Resources</h1>
+                    <p>Access additional materials, cheatsheets, and tools to enhance your learning</p>
+                </div>
+                <div class="header-actions">
+                    <div class="search-resources">
+                        <div class="search-input-group">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Search resources...">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Resource Categories -->
+            <section class="resource-categories">
+                <div class="categories-grid">
+                    <div class="category-card active" data-category="all">
+                        <div class="category-icon">
+                            <i class="fas fa-th-large"></i>
+                        </div>
+                        <h3>All Resources</h3>
+                        <span>45 items</span>
+                    </div>
+                    
+                    <div class="category-card" data-category="cheatsheets">
+                        <div class="category-icon">
+                            <i class="fas fa-file-code"></i>
+                        </div>
+                        <h3>Cheatsheets</h3>
+                        <span>12 items</span>
+                    </div>
+                    
+                    <div class="category-card" data-category="tools">
+                        <div class="category-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Tools</h3>
+                        <span>8 items</span>
+                    </div>
+                    
+                    <div class="category-card" data-category="books">
+                        <div class="category-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h3>E-books</h3>
+                        <span>15 items</span>
+                    </div>
+                    
+                    <div class="category-card" data-category="videos">
+                        <div class="category-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <h3>Video Tutorials</h3>
+                        <span>10 items</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Resources Grid -->
+            <section class="resources-section">
+                <div class="section-header">
+                    <h2>Popular Resources</h2>
+                    <div class="sort-controls">
+                        <select class="sort-select">
+                            <option value="popular">Most Popular</option>
+                            <option value="recent">Recently Added</option>
+                            <option value="name">Alphabetical</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="resources-grid">
+                    <!-- Resource 1 -->
+                    <div class="resource-card" data-category="cheatsheets">
+                        <div class="resource-header">
+                            <div class="resource-icon">
+                                <i class="fab fa-html5"></i>
+                            </div>
+                            <div class="resource-actions">
+                                <button class="btn-icon">
+                                    <i class="fas fa-bookmark"></i>
+                                </button>
+                                <button class="btn-icon">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="resource-content">
+                            <h3>HTML5 Cheatsheet</h3>
+                            <p>Complete reference guide for HTML5 tags, attributes, and semantic elements</p>
+                            <div class="resource-meta">
+                                <span class="file-type">PDF</span>
+                                <span class="file-size">2.1 MB</span>
+                                <span class="downloads">1.2k downloads</span>
+                            </div>
+                        </div>
+                        <div class="resource-footer">
+                            <div class="tags">
+                                <span class="tag">HTML</span>
+                                <span class="tag">Web Development</span>
+                                <span class="tag">Beginner</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Resource 2 -->
+                    <div class="resource-card" data-category="cheatsheets">
+                        <div class="resource-header">
+                            <div class="resource-icon">
+                                <i class="fab fa-css3-alt"></i>
+                            </div>
+                            <div class="resource-actions">
+                                <button class="btn-icon">
+                                    <i class="fas fa-bookmark"></i>
+                                </button>
+                                <button class="btn-icon">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="resource-content">
+                            <h3>CSS3 Complete Guide</h3>
+                            <p>Properties, selectors, flexbox, grid, and animations reference</p>
+                            <div class="resource-meta">
+                                <span class="file-type">PDF</span>
+                                <span class="file-size">3.5 MB</span>
+                                <span class="downloads">980 downloads</span>
+                            </div>
+                        </div>
+                        <div class="resource-footer">
+                            <div class="tags">
+                                <span class="tag">CSS</span>
+                                <span class="tag">Styling</span>
+                                <span class="tag">Layout</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Resource 3 -->
+                    <div class="resource-card" data-category="tools">
+                        <div class="resource-header">
+                            <div class="resource-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="resource-actions">
+                                <button class="btn-icon">
+                                    <i class="fas fa-bookmark"></i>
+                                </button>
+                                <button class="btn-icon">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="resource-content">
+                            <h3>CodePen Collection</h3>
+                            <p>Curated list of helpful CodePen examples for frontend development</p>
+                            <div class="resource-meta">
+                                <span class="file-type">Web</span>
+                                <span class="file-size">-</span>
+                                <span class="downloads">650 views</span>
+                            </div>
+                        </div>
+                        <div class="resource-footer">
+                            <div class="tags">
+                                <span class="tag">Tools</span>
+                                <span class="tag">Examples</span>
+                                <span class="tag">Frontend</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Resource 4 -->
+                    <div class="resource-card" data-category="books">
+                        <div class="resource-header">
+                            <div class="resource-icon">
+                                <i class="fab fa-js-square"></i>
+                            </div>
+                            <div class="resource-actions">
+                                <button class="btn-icon">
+                                    <i class="fas fa-bookmark"></i>
+                                </button>
+                                <button class="btn-icon">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="resource-content">
+                            <h3>JavaScript Patterns</h3>
+                            <p>Essential design patterns and best practices for JavaScript development</p>
+                            <div class="resource-meta">
+                                <span class="file-type">EPUB</span>
+                                <span class="file-size">5.2 MB</span>
+                                <span class="downloads">720 downloads</span>
+                            </div>
+                        </div>
+                        <div class="resource-footer">
+                            <div class="tags">
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">Patterns</span>
+                                <span class="tag">Advanced</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Resource 5 -->
+                    <div class="resource-card" data-category="videos">
+                        <div class="resource-header">
+                            <div class="resource-icon">
+                                <i class="fab fa-react"></i>
+                            </div>
+                            <div class="resource-actions">
+                                <button class="btn-icon">
+                                    <i class="fas fa-bookmark"></i>
+                                </button>
+                                <button class="btn-icon">
+                                    <i class="fas fa-play-circle"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="resource-content">
+                            <h3>React Hooks Masterclass</h3>
+                            <p>Video series covering useState, useEffect, and custom hooks</p>
+                            <div class="resource-meta">
+                                <span class="file-type">Video</span>
+                                <span class="file-size">450 MB</span>
+                                <span class="downloads">540 views</span>
+                            </div>
+                        </div>
+                        <div class="resource-footer">
+                            <div class="tags">
+                                <span class="tag">React</span>
+                                <span class="tag">Hooks</span>
+                                <span class="tag">Video</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Resource 6 -->
+                    <div class="resource-card" data-category="tools">
+                        <div class="resource-header">
+                            <div class="resource-icon">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <div class="resource-actions">
+                                <button class="btn-icon">
+                                    <i class="fas fa-bookmark"></i>
+                                </button>
+                                <button class="btn-icon">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="resource-content">
+                            <h3>Color Palette Generator</h3>
+                            <p>Tool to create and export beautiful color palettes for your projects</p>
+                            <div class="resource-meta">
+                                <span class="file-type">Web Tool</span>
+                                <span class="file-size">-</span>
+                                <span class="downloads">890 uses</span>
+                            </div>
+                        </div>
+                        <div class="resource-footer">
+                            <div class="tags">
+                                <span class="tag">Design</span>
+                                <span class="tag">Colors</span>
+                                <span class="tag">Tools</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recently Viewed -->
+            <section class="recent-resources">
+                <div class="section-header">
+                    <h2>Recently Viewed</h2>
+                    <a href="#" class="view-all">Clear History</a>
+                </div>
+                <div class="recent-list">
+                    <div class="recent-item">
+                        <div class="recent-icon">
+                            <i class="fab fa-html5"></i>
+                        </div>
+                        <div class="recent-content">
+                            <h4>HTML5 Semantic Elements Guide</h4>
+                            <span>Viewed 2 hours ago</span>
+                        </div>
+                        <button class="btn btn-outline btn-sm">Open</button>
+                    </div>
+                    
+                    <div class="recent-item">
+                        <div class="recent-icon">
+                            <i class="fab fa-css3-alt"></i>
+                        </div>
+                        <div class="recent-content">
+                            <h4>CSS Grid Layout Examples</h4>
+                            <span>Viewed 1 day ago</span>
+                        </div>
+                        <button class="btn btn-outline btn-sm">Open</button>
+                    </div>
+                    
+                    <div class="recent-item">
+                        <div class="recent-icon">
+                            <i class="fab fa-js-square"></i>
+                        </div>
+                        <div class="recent-content">
+                            <h4>JavaScript Array Methods</h4>
+                            <span>Viewed 2 days ago</span>
+                        </div>
+                        <button class="btn btn-outline btn-sm">Open</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="scripts/script.js"></script>
+    <script src="scripts/resources.js"></script>
+</body>
+</html>
